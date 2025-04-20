@@ -1,4 +1,4 @@
-// //Object based
+// //Key-value based Object
 // const rectangle = {
 //     width: 2,
 //     height: 4,
@@ -14,13 +14,13 @@
 
 
 
-//Class based 
+//Class based Object
 
 class Rectangle {
     constructor(width, height, color) {
         this.width = width;
         this.height = height;
-        this.color = color;
+        this.color = color; //this is gives access to current variable inside fun or class
     }
 
     area() {
@@ -35,7 +35,8 @@ class Rectangle {
     }
 }
 
-const rect = new Rectangle(2, 3, "red")
+const rect = new Rectangle(2, 3, "red") //instance/object of Rectangle class
+//new : initializing the new instance of a class
 const area = rect.area();
 console.log(area);
 
