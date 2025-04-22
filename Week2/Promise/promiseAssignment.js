@@ -14,10 +14,8 @@ Q: Write a function that
 //     console.log(display);
 // })
 
-const fs = require('fs').promises
+const fs = require("fs").promises;
 
-fs.readFile('a.txt', 'utf-8')
-    .then((data) => {
-        console.log(data);
-    })
-
+fs.readFile("a.txt", "utf-8").then((data) => {
+  console.log(data);
+});

@@ -5,16 +5,15 @@ Write code that
 3. logs hello there 5 seconds after step 2
 */
 
-//Without Promise
-
+//Without Promise, have callback
 setTimeout(() => {
-    console.log("hi");
+  console.log("hi");
+  setTimeout(() => {
+    console.log("Hello");
     setTimeout(() => {
-        console.log("Hello");
-        setTimeout(() => {
-            console.log("hello there");
-        }, 5000)
-    }, 3000)
-}, 1000)
+      console.log("hello there");
+    }, 5000);
+  }, 3000);
+}, 1000);
 
-
+//With Promise
