@@ -26,11 +26,13 @@ let user = userDashboard();
 
 function isUserLoggedIn() {
   return new Promise((res, rej) => {
-    if (user.isLogged == false) {
-      res(user);
-    } else {
-      rej("not logged");
-    }
+    setTimeout(() => {
+      if (user.isLogged == true) {
+        res(user);
+      } else {
+        rej("not logged");
+      }
+    }, 1200);
   });
 }
 
@@ -39,7 +41,7 @@ console.log(promise);
 
 promise
   .then((data) => {
-    console.log(user);
+    console.log(data.user);
   })
   .catch((err) => {
     console.log(err);
