@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="todo-list">
+        <h2>Todo 1</h2>
+        <h2>Todo 2</h2>
+        <h2>Todo 3</h2>
+        <h2>Todo 4</h2>
+        <button onclick="deleteTodo()">Delete Todo</button>
+    </div>
+</body>
+<script>
+    function deleteTodo() {
+        const element = document.querySelector('h2') //element to be deleted
+        element.parentNode.removeChild(element)
+        // const parent = document.getElementById('todo-list') //parent 
+        // parent.removeChild(element)
+    }
+</script>
+</html>
