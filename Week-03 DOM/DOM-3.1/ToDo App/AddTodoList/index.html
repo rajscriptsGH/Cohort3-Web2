@@ -15,24 +15,23 @@
     let ctr = 1;
     function addTodo() {
         //extract the input value
-        const inputEl = document.querySelector('input')
+        const inputEl = document.querySelector("input");
         const value = inputEl.value;
 
         //create task
-        let list1 = document.createElement('div')
+        let list1 = document.createElement("div");
         list1.setAttribute("id", `${ctr}`);
 
-        list1.innerHTML = 
-        `<div> ${value} </div> <button onclick="deleteTodo(${ctr})"">Delete</button> `;
+        list1.innerHTML = `<div> ${value} </div> <button onclick="deleteTodo(${ctr})"">Delete</button> `;
 
         ctr = ctr + 1;
         //append child
-        document.querySelector('body').appendChild(list1)
+        document.querySelector("body").appendChild(list1);
         inputEl.value = ""; //clear value
     }
     function deleteTodo(index) {
-        let item = document.getElementById(index)
-        item.parentNode.removeChild(item)
+        let item = document.getElementById(index);
+        item.parentNode.removeChild(item);
     }
 </script>
 
