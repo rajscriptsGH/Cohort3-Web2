@@ -1,0 +1,8 @@
+{
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.inlineSuggest.edits.experimental.enabled": false,
+    "editor.inlineSuggest.edits.experimental.onlyShowWhenCloseToCursor": false,
+    "editor.inlineSuggest.enabled": false,
+    "editor.inlineSuggest.suppressSuggestions": true
+}
