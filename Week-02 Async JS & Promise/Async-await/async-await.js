@@ -12,17 +12,13 @@ function setTimeoutPromisified(duration){
     });
 }
 
-setTimeoutPromisified(1000)
-.then(()=>{
-    console.log('hi')
-    return setTimeoutPromisified(3000)
-})
-.then(()=>{
-    console.log('hello')
-    return setTimeoutPromisified(5000)
-})
-.then(()=>{
-    console.log('hello there')
-})
+async function solve(){
+    await setTimeoutPromisified(1000)
+    console.log('hii');
+    await setTimeoutPromisified(3000)
+    console.log('hello');
+    await setTimeoutPromisified(5000)
+    console.log('hello there');
+}
 
-
+solve()
