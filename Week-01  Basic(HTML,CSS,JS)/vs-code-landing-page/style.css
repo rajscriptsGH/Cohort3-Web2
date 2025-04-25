@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+header {
+  text-align: center;
+  width: 100vw;
+  height: 52px;
+  /* background-color: #383434; */
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  margin-top: 8px;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.logo {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+.logo:hover {
+  cursor: pointer;
+}
+.logo img {
+  height: 36px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.logo p {
+  text-align: center;
+  padding: 12px;
+  font-weight: 500;
+  font-size: 20px;
+}
+.navbar {
+  margin-left: 13px;
+  margin-right: 13px;
+}
+.navbar a {
+  text-decoration: none;
+  color: #e2dddd;
+  padding: 11px;
+  font-weight: 400;
+}
+.navbar a:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 49px;
+}
+
+input {
+  height: 37px;
+  text-align: start;
+  padding: 18px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #259ff0;
+}
+.search-btn button {
+  margin-left: 5px;
+  height: 37px;
+  width: 120px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  background-color: #0896f5;
+  font-size: 17px;
+}
+.search-btn button:hover {
+  cursor: pointer;
+  background-color: #097fce;
+}
+
+/* main */
+
+section {
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+main {
+  margin-bottom: 20px;
+}
+main p {
+  font-size: 78px;
+  font-weight: 900;
+}
+.p1 {
+  padding: 12px;
+  margin-left: 12px;
+}
+
+.download-btn p {
+  font-size: 25px;
+  font-weight: 600;
+  color: #128aec;
+}
+.download-btn button {
+  height: 54px;
+  width: 249px;
+  background-color: #128aec;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  margin: 9px;
+  padding: 12px;
+  font-size: 23px;
+  font-weight: 400;
+}
+.download-btn button:hover {
+  background-color: #0870c5;
+  cursor: pointer;
+}
+
+.hero {
+  background-image: url("./images/hero-background.webp");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px 30px 90px 30px;
+  margin-top: 20px;
+}
+.hero img {
+  margin: auto;
+  height: 600px;
+  width: 900px;
+  border-radius: 10px;
+}
+
+.agent{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.agent .text-agent{
+  width: 345px;
+  margin-right: 70px;
+}
+.text-agent h1{
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.text-agent p{
+  text-align: left;
+  margin-bottom: 5px;
+  /* padding: 3px; */
+  line-height: 27px;
+}
+
+.agent-img img{
+  height: 700px;
+  width: 900px;
+}
+
+.suggestion {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.suggestion .text-suggestion {
+  width: 345px;
+  margin-right: 70px;
+}
+.text-suggestion h1 {
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.text-suggestion p {
+  text-align: left;
+  margin-bottom: 5px;
+  /* padding: 3px; */
+  line-height: 27px;
+}
+
+.suggestion-img img {
+  height: 700px;
+  width: 900px;
+}
+
+.customization {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.customization .text-customization {
+  width: 345px;
+  margin-right: 70px;
+}
+.text-customization h1 {
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.text-customization p {
+  text-align: left;
+  margin-bottom: 8px;
+  /* padding: 3px; */
+  line-height: 27px;
+}
+
+.customization-img img {
+  height: 500px;
+  width: 900px;
+}
+
+.anywhere {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.anywhere .text-anywhere {
+  width: 345px;
+  margin-right: 70px;
+}
+.text-anywhere h1 {
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.text-anywhere p {
+  text-align: left;
+  margin-bottom: 8px;
+  /* padding: 3px; */
+  line-height: 27px;
+}
+
+.anywhere-img img {
+  height: 500px;
+  width: 900px;
+}
