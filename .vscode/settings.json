@@ -1,5 +1,5 @@
 {
-    "editor.acceptSuggestionOnEnter": "off",
+    "editor.acceptSuggestionOnEnter": "on",
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.inlineSuggest.edits.experimental.enabled": false,
     "editor.inlineSuggest.edits.experimental.onlyShowWhenCloseToCursor": false,
