@@ -1,0 +1,31 @@
+<html>
+<body>
+    <input type="text"></input>
+    <button onclick="addTodo()">Add todo!</button>
+    <script>
+        let todos = [];
+        function addTodo() {
+            todos.push({
+                title: document.querySelector("input").value
+            })
+            render();
+            console.log(todos);
+            
+        }
+
+        function deleteTodo() {
+
+            render();
+        }
+
+        function render() {
+            let inputVal = document.querySelector('input')
+            let value = inputVal.value;          
+            console.log(value);
+            return value
+        }
+        console.log(todos);
+        
+    </script>
+</body>
+</html>
