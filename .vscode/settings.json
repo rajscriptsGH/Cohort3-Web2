@@ -4,5 +4,8 @@
     "editor.inlineSuggest.edits.experimental.enabled": false,
     "editor.inlineSuggest.edits.experimental.onlyShowWhenCloseToCursor": false,
     "editor.inlineSuggest.enabled": false,
-    "editor.inlineSuggest.suppressSuggestions": true
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "editor.formatOnSave": true,
+    "notebook.formatOnSave.enabled": true,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true
 }
