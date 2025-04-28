@@ -54,3 +54,22 @@ Common methods
 2. **POST** - Submit data to be processed by a server
 3. **PUT** - Update or create a resource on the serve
 4. **DELETE** - Remove a resource from the server
+
+# Status Codes
+
+Status codes are 3-digit numbers sent by a server to show the result of a request.
+Common Categories:
+
+1xx → Informational (Request received, continue processing)
+
+2xx → Success (Request was successful)
+Example: 200 OK
+
+3xx → Redirection (Further action needed)
+Example: 301 Moved Permanently
+
+4xx → Client Error (Problem with the request)
+Example: 404 Not Found
+
+5xx → Server Error (Problem on server side)
+Example: 500 Internal Server Error
