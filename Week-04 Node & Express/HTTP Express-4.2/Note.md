@@ -37,3 +37,19 @@ Example:
 Real world analogy -
 Domain name - Phone contact
 IP - There real phone number
+
+# Ports
+
+**Ports** are logical endpoints used by protocols to identify specific processes running on a computer or server.
+
+They help direct network traffic to the correct application or service on a system.
+
+# Methods
+
+HTTP methods are used to specify the type of action that the client wants to perform on a resource on the server.
+
+Common methods
+**GET** - Retrieve data from a server
+**POST** - Submit data to be processed by a server
+**PUT** - Update or create a resource on the serve
+**DELETE** - Remove a resource from the server
