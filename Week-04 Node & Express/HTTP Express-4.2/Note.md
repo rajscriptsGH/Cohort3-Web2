@@ -49,7 +49,8 @@ They help direct network traffic to the correct application or service on a syst
 HTTP methods are used to specify the type of action that the client wants to perform on a resource on the server.
 
 Common methods
-**GET** - Retrieve data from a server
-**POST** - Submit data to be processed by a server
-**PUT** - Update or create a resource on the serve
-**DELETE** - Remove a resource from the server
+
+1. **GET** - Retrieve data from a server
+2. **POST** - Submit data to be processed by a server
+3. **PUT** - Update or create a resource on the serve
+4. **DELETE** - Remove a resource from the server
