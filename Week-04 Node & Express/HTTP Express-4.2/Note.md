@@ -73,3 +73,17 @@ Example: 404 Not Found
 
 5xx → Server Error (Problem on server side)
 Example: 500 Internal Server Error
+
+# Body
+
+the **body** (or payload) refers to the part of an HTTP message that contains the actual data being sent to the server.
+It is usually JSON data that is transferred to the server.
+
+For example -
+_{
+todo: "Go to the gym"
+}_
+
+# Routes
+
+Routes are paths or endpoints that define how incoming requests are handled by a server. Routing is a mechanism used to direct incoming HTTP requests to the appropriate handler functions or resources based on the URL path.
