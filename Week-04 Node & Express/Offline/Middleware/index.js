@@ -10,6 +10,7 @@ function isOldEnough(age) {
         return false;
     }
 }
+
 app.get('/ride2', (req, res) => {
     if (isOldEnough(req.query.age)) {
         res.json({
@@ -33,6 +34,9 @@ function isOldEnoughMiddleware(req, res, next) {
         })
     }
 }
+
+//if u need to use one midleware in all reques, just remove middleware fun  and add
+// app.use(isOldEnoughMiddleware)
 
 app.get('/ride1', isOldEnoughMiddleware, (req, res) => {
 
