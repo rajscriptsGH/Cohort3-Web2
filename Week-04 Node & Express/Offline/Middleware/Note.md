@@ -10,9 +10,7 @@ _✅ What is Middleware?_
 
 _Syntax_
 
-\*function middleware(req, res, next) {
+_function middleware(req, res, next) {
 // logic
 next(); // or res.send() to end cycle
-}
-
--
+}_
