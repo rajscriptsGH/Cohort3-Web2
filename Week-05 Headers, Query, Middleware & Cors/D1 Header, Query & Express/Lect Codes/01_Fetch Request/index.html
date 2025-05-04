@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Linkedin</h4>
+    <div id="post"></div>
+    <script>
+        async function getresponse(){
+            let response =await fetch('https://jsonplaceholder.typicode.com/posts/1')
+            const data = await response.json();
+            console.log(data);   
+            document.getElementById('post').innerHTML = data.body;
+        }
+        getresponse()
+
+    </script>
+</body>
+</html>
