@@ -3,30 +3,29 @@ import express from 'express'
 const app = express()
 const port = 3000;
 
+let requestCount = 0;
 
-app.get('/add', (req, res) => {                                  //here we need to pass as localhost:port/sum?a=2&b=3...
+//middleware
+function requestIncrease(req, res, next) {
+    requestCount = requestCount + 1;
+    req.name = "razzzzzzzzz";
+    console.log("Total num of requests = " + requestCount);
+    next();
+}
+
+function realSumHandler(req, res) {
+    // requestIncrease()                                 //this function is added as middleware
     const a = parseInt(req.query.a);
     const b = parseInt(req.query.b);
-    if (isNaN(a) || isNaN(b)) {
-        return res.status(400).json({ error: "Invalid query" })
-    }
+    console.log(req.name);
+
 
     const ans = a + b;
-
     res.json({ ans })
-})
+}
 
+app.get('/add', requestIncrease, realSumHandler);
 
-app.get('/multiply', (req, res) => {
-    const a = parseInt(req.query.a);
-    const b = parseInt(req.query.b);
-    if (isNaN(a) || isNaN(b)) {
-        return res.status(400).json({ error: "Invalid query" })
-    }
-    const ans = a * b;
-
-    res.json({ ans })
-})
 
 
 
