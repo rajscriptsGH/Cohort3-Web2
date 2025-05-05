@@ -6,28 +6,22 @@ Assignment-
 */
 
 import express from 'express'
-import path from 'path';
-import { fileURLToPath } from 'url';
+import cors from 'cors'
 
 
 const app = express();
 const port = 3000;
 
 
-// These 2 lines are needed to get __dirname in ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // Enable CORS
-app.use(cors({
-    origin: '*',           // or use specific origin: 'http://localhost:5000'
-}));
+app.use(cors())
 
 app.use(express.json())
 
 // Serve HTML file
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(__dirname, '/index.html');
 });
 
 app.post('/sum', (req, res) => {
@@ -45,3 +39,14 @@ app.listen(port, () => {
     console.log(`Server is running at port ${port}`);
 
 })
+
+
+/*
+
+-to use cors => first import it => npm install cors
+- app.use(cors()) => this is allow all frontend to send req to ur backend
+
+-app.use(cors(
+    Domain:["http:/host", "https:/google.com"]
+))
+*/
