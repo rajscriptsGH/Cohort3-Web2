@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cors</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+</head>
+<body>
+    <input id="a" type="text" placeholder="first value">
+    <input id="b" type="text" placeholder="second value">
+    <button onclick="sendRequest()">Find Sum</button>
+</body>
+
+<script>
+    function sendRequest(){
+        
+        axios.post("http://localhost:3000/sum", {
+            a: document.getElementById('a').value,
+            b: document.getElementById('b').value
+        })
+    }
+</script>
+</html>
