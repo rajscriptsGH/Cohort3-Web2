@@ -13,7 +13,6 @@ const arr = [1, 2, 3, 4, 5];
 // console.log(newarr);
 
 
-
 //filter way
 
 // function filterFun(n) {
@@ -28,8 +27,6 @@ const arr = [1, 2, 3, 4, 5];
 // console.log(ans);
 
 //other way
-
-
 const ans = arr.filter(function (n) {
     if (n % 2 == 0) {
         return true;
@@ -38,22 +35,6 @@ const ans = arr.filter(function (n) {
     }
 });
 console.log(ans);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
