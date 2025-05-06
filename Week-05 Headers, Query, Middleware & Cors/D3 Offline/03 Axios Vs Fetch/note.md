@@ -1,1 +1,6 @@
 difference between Axios and Fetch
+
+1. in Axios, we dont need to convert incoming data => json, text,....
+
+2. we don't need to put axta method just put post, get .....
+   and we will get desired data
