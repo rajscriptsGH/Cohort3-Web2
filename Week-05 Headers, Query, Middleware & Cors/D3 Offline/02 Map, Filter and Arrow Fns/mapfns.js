@@ -27,4 +27,8 @@ const ans = arr.map((i) => {            //normal function or arrow fun, either o
 })
 console.log(ans);
 
+/*
+map: Used when you want to transform each item in an array and return a new array of the same length.
+*/
+
 
