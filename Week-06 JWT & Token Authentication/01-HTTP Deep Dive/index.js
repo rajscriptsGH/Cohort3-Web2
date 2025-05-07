@@ -2,7 +2,8 @@ import express from 'express'
 const app = express();
 const port = 3000;
 
-app.use(express.json())                             //Use express.json as a middleware to parse the post request body
+app.use(express.json())                        //Use express.json as a middleware to parse the post request body
+
 
 const users = [];                                   //to store the user data
 
@@ -56,7 +57,6 @@ app.post('/signin', (req, res) => {
         })
     }
 })
-
 
 
 app.listen(port, () => {
