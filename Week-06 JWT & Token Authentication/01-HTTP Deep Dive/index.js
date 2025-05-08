@@ -1,4 +1,7 @@
 import express from 'express'
+import jwt from 'jsonwebtoken'
+
+const JWT_SECRET = "randomthings"
 const app = express();
 const port = 3000;
 
@@ -7,16 +10,17 @@ app.use(express.json())                        //Use express.json as a middlewar
 
 const users = [];                                   //to store the user data
 
-function generateToken() {
-    let options = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+//while converting token to jwt, get rid of this function
+// function generateToken() {
+//     let options = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-    let token = "";
-    for (let i = 0; i < 32; i++) {
-        // use a simple function here
-        token += options[Math.floor(Math.random() * options.length)];
-    }
-    return token;
-}
+//     let token = "";
+//     for (let i = 0; i < 32; i++) {
+//         // use a simple function here
+//         token += options[Math.floor(Math.random() * options.length)];
+//     }
+//     return token;
+// }
 
 
 app.post('/signup', (req, res) => {
@@ -48,8 +52,12 @@ app.post('/signin', (req, res) => {
     })
 
     if (user) {
-        const token = generateToken();
-        user.token = token;               //store token in users for user
+        const token = jwt.sign({                               //this id neede for jwt   
+            username: username
+        }, JWT_SECRET)
+
+        // const token = generateToken();                         //this is needed for token   
+        // user.token = token;               //store token in users for user
         res.json({
             token: token
         })
@@ -63,14 +71,28 @@ app.post('/signin', (req, res) => {
 })
 
 app.get('/me', (req, res) => {
-    const token = req.headers.token;
+    const token = req.headers.token;                               //now it will return jwt not token
+    const decodeInformation = jwt.verify(token, JWT_SECRET)       // {usrname: xyz.gmailcom}
+
+    const username = decodeInformation.username
+
+    //now username is used to decode, so usename will be used to get all
     const user = users.find((u) => {
-        if (u.token == token) {
+        if (u.username == username) {
             return true;
         } else {
             return false;
         }
     })
+
+    //earlier it used to return token, so token was used to get all
+    // const user = users.find((u) => {
+    //     if (u.token == token) { 
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // })
 
     if (user) {
         res.json({
