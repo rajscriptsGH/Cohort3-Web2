@@ -1,7 +1,7 @@
 import express from 'express'
-import jwt from 'jsonwebtoken'
+import jwt from 'jsonwebtoken'         //install jwt package
 
-const JWT_SECRET = "randomthings"
+const JWT_SECRET = "randomthings"     //secret key, should be strong
 const app = express();
 const port = 3000;
 
@@ -39,12 +39,13 @@ app.post('/signin', (req, res) => {
     })
 
     if (user) {
-        const token = jwt.sign({                               //this id neede for jwt   
-            username: username
+        const token = jwt.sign({                               //sign fun used to help in converting username into jwt token 
+            username: username                                 // username is converted into jwt, not password for some security reason
         }, JWT_SECRET)
 
         res.json({
-            token: token
+            token: token,
+            msg: "Signed in"
         })
     } else {
         res.status(403).send({
@@ -55,9 +56,10 @@ app.post('/signin', (req, res) => {
 
 })
 
+//this route will return the user info only id they are signed in, upon calling
 app.get('/me', (req, res) => {
     const token = req.headers.token;                               //now it will return jwt not token
-    const decodeInformation = jwt.verify(token, JWT_SECRET)       // {usrname: xyz.gmailcom}
+    const decodeInformation = jwt.verify(token, JWT_SECRET)       // after converting username to jwt, it will verify it and return if matched 
 
     const username = decodeInformation.username
 
