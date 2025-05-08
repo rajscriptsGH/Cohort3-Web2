@@ -7,5 +7,6 @@
     "editor.inlineSuggest.suppressSuggestions": true,
     "editor.formatOnSave": true,
     "notebook.formatOnSave.enabled": true,
-    "editor.bracketPairColorization.independentColorPoolPerBracketType": true
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.wordWrap": "on"
 }
