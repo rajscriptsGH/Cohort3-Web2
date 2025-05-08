@@ -51,7 +51,7 @@ app.post('/signin', (req, res) => {
         const token = generateToken();
         user.token = token;               //store token in users for user
         res.json({
-            msg: token
+            token: token
         })
     } else {
         res.status(403).send({
@@ -62,6 +62,27 @@ app.post('/signin', (req, res) => {
 
 })
 
+app.get('/me', (req, res) => {
+    const token = req.headers.token;
+    const user = users.find((u) => {
+        if (u.token == token) {
+            return true;
+        } else {
+            return false;
+        }
+    })
+
+    if (user) {
+        res.json({
+            username: user.username,
+            password: user.password
+        })
+    } else {
+        res.json({
+            msg: "Invalid token"
+        })
+    }
+})
 
 app.listen(port, () => {
     console.log(`Server is running at port: ${port}`);
