@@ -70,8 +70,6 @@ app.get('/me', (req, res) => {
         }
     })
 
-
-
     if (user) {
         res.json({
             username: user.username,
