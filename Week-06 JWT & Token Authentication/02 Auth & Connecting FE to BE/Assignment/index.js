@@ -3,15 +3,24 @@ Can you try creating a middleware called auth that verifies if a user is logged 
 */
 
 import express from 'express'
+import path from 'path';
+import { fileURLToPath } from 'url';
 import jwt from 'jsonwebtoken'
 const JWT_SECRET = "randomthings"
 const app = express();
 const port = 3000;
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 app.use(express.json())
 
 
 const users = [];
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+})
 
 app.post('/signup', (req, res) => {
     const username = req.body.username;
