@@ -2,6 +2,9 @@ import jwt from 'jsonwebtoken';
 const jwtPassword = 'secret';
 import zod from 'zod'
 
+const emailSchema = zod.string().email();
+const passwordSchema = zod.string().min(6);
+
 
 /**
  * Generates a JWT for a given username and password.
@@ -15,6 +18,11 @@ import zod from 'zod'
  *                        the password does not meet the length requirement.
  */
 function signJwt(username, password) {
+    const usernameResponse = emailSchema.safeParse(username);
+    const passwordResponse = passwordSchema.safeParse(password);
+    if (!usernameResponse.success || !passwordResponse.success) {
+        return null
+    }
     const signature = jwt.sign({
         username
     }, jwtPassword)
