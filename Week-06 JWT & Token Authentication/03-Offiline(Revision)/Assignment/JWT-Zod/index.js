@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 const jwtPassword = 'secret';
 
 
@@ -41,9 +41,9 @@ function decodeJwt(token) {
 }
 
 
-module.exports = {
-    signJwt,
-    verifyJwt,
-    decodeJwt,
-    jwtPassword,
-};
+// module.exports = {
+//     signJwt,
+//     verifyJwt,
+//     decodeJwt,
+//     jwtPassword,
+// };
