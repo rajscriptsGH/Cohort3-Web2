@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 const jwtPassword = 'secret';
+import zod from 'zod'
 
 
 /**
@@ -14,7 +15,10 @@ const jwtPassword = 'secret';
  *                        the password does not meet the length requirement.
  */
 function signJwt(username, password) {
-    // Your code here
+    const signature = jwt.sign({
+        username
+    }, jwtPassword)
+    return signature
 }
 
 /**
