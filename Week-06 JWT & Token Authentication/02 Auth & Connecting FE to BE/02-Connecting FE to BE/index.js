@@ -62,7 +62,14 @@ app.get('/me', (req, res) => {
     const username = decodeInfo.username
 
     //get username from database/array
-    const user = users.find(u => u.username == username)
+    const user = users.find((u) => {
+        if (u.username == username && u.password == password) {
+            return true;
+        } else {
+            return false;
+        }
+    })
+    // const user = users.find(u => u.username == username)
 
     if (user) {
         res.json({
