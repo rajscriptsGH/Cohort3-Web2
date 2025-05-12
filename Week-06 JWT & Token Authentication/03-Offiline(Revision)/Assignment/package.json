@@ -1,9 +1,12 @@
 {
   "name": "jwt-zod",
   "version": "1.0.0",
-  "description": "-Write a function that takes in a username and password and returns a JWT token with the username encoded. Should return null if the username is not a valid email or if the password is less than 6 characters. Try using the zod library here",
+  "description": "jwt assignment",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,5 +16,8 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }

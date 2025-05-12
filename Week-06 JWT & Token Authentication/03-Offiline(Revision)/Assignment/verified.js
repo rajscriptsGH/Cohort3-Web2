@@ -39,7 +39,14 @@ function signJwt(username, password) {
  */
 function verifyJwt(token) {
     // Your code here
+    let verified = jwt.verify(token, jwtPassword)
+    if (verified) {
+        return true;
+    } else {
+        return false
+    }
 }
+// verifyJwt("ksjwiue ")
 
 /**
  * Decodes a JWT to reveal its payload without verifying its authenticity.
@@ -50,7 +57,14 @@ function verifyJwt(token) {
  */
 function decodeJwt(token) {
     // Your code here
+    const decodeed = jwt.decode(token)
+    if (decodeed) {
+        return true;
+    } else {
+        return false
+    }
 }
+// decodeed("kfhweodboqewd")
 
 
 // module.exports = {
