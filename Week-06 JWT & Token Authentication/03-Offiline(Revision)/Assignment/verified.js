@@ -66,10 +66,3 @@ function decodeJwt(token) {
 }
 // decodeed("kfhweodboqewd")
 
-
-// module.exports = {
-//     signJwt,
-//     verifyJwt,
-//     decodeJwt,
-//     jwtPassword,
-// };
