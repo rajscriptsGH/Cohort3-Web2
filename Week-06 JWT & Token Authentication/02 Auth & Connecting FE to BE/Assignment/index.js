@@ -15,7 +15,6 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.json())
 
-
 const users = [];
 
 app.get('/', (req, res) => {
@@ -34,8 +33,6 @@ app.post('/signup', (req, res) => {
     res.json({
         msg: "You are signed up"
     })
-
-
 })
 
 
