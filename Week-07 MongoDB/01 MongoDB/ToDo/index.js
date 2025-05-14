@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 import mongoose from 'mongoose'
 import { UserModel, TodoModel } from './db.js'
 
-mongoose.connect("mongodb+srv://rajscripts100x:Fd34oovuyS5NIYsJ@cluster0.mqrp3kn.mongodb.net/todo-razz-6363")
+await mongoose.connect("mongodb+srv://rajscripts100x:Fd34oovuyS5NIYsJ@cluster0.mqrp3kn.mongodb.net/todo-razz-6363")
 const app = express()
 const port = 3000;
 
@@ -18,7 +18,7 @@ app.post('/signup', async (req, res) => {
     const name = req.body.name
     const age = req.body.age
 
-    await UserModel.create({
+    await UserModel.create({                              //this return promise, so have to await
         username: username,
         password: password,
         age: age,
