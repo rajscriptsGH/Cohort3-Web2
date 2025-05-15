@@ -40,7 +40,7 @@ app.post('/signin', async (req, res) => {
 
     if (user) {
         const token = jwt.sign({
-            id: user._id
+            id: user._id.toString()
         }, JWT_SECRET);
         res.json({
             token
@@ -52,14 +52,48 @@ app.post('/signin', async (req, res) => {
     }
     console.log(user);
 })
-app.post('/todo', (req, res) => {
+app.post('/todo', auth, (req, res) => {
+    const userId = req.userId
+    const username = req.body.username
+    const name = req.body.name
+    const age = req.body.age
 
 
+    TodoModel.create({
+        userId,
+        username,
+        name,
+        age
+    })
+
+    res.json({
+        msg: "Todo created"
+    })
 })
-app.get('/todos', (req, res) => {
+app.get('/todos', auth, async (req, res) => {
+    const userId = req.userId
+    const todos = await TodoModel.find({
+        userId: userId
+    })
 
+    res.json({
+        todos
+    })
 })
 
+function auth(req, res, next) {
+    const token = req.headers.token
+    const decoded = jwt.verify(token, JWT_SECRET)
+
+    if (decoded) {
+        req.userId = decoded.id
+        next()
+    } else {
+        res.status(403).json({
+            msg: "Incorrect credentials"
+        })
+    }
+}
 
 app.listen(port, () => {
     console.log(`Server is running at port: ${port}`);
