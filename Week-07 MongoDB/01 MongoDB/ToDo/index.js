@@ -1,5 +1,6 @@
 import express, { json } from 'express'
 import jwt from 'jsonwebtoken'
+import { auth, JWT_SECRET } from './auth.js'
 import mongoose from 'mongoose'
 import { UserModel, TodoModel } from './db.js'
 
@@ -7,7 +8,7 @@ await mongoose.connect("mongodb+srv://rajscripts100x:Fd34oovuyS5NIYsJ@cluster0.m
 const app = express()
 const port = 3000;
 
-const JWT_SECRET = "jdahbjncwihfk"
+
 
 app.use(express.json())
 
@@ -52,14 +53,14 @@ app.post('/signin', async (req, res) => {
     }
     console.log(user);
 })
-app.post('/todo', auth, (req, res) => {
+app.post('/todo', auth, async (req, res) => {
     const userId = req.userId
     const username = req.body.username
     const name = req.body.name
     const age = req.body.age
 
 
-    TodoModel.create({
+    await TodoModel.create({
         userId,
         username,
         name,
@@ -81,19 +82,7 @@ app.get('/todos', auth, async (req, res) => {
     })
 })
 
-function auth(req, res, next) {
-    const token = req.headers.token
-    const decoded = jwt.verify(token, JWT_SECRET)
 
-    if (decoded) {
-        req.userId = decoded.id
-        next()
-    } else {
-        res.status(403).json({
-            msg: "Incorrect credentials"
-        })
-    }
-}
 
 app.listen(port, () => {
     console.log(`Server is running at port: ${port}`);
