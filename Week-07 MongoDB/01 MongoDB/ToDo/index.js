@@ -19,6 +19,7 @@ app.post('/signup', async (req, res) => {
     const name = req.body.name
     const age = req.body.age
 
+    //data insert here
     await UserModel.create({                              //this return promise, so have to await
         username: username,
         password: password,
