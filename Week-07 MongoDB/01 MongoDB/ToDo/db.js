@@ -12,7 +12,7 @@ const User = new Schema({
 const ToDo = new Schema({
     desc: String,
     done: Boolean,
-    userId: ObjectId                                    //unique id of user
+    userId: ObjectId                                    //unique id of user -> datatype of if is ObjectId
 });
 
 //Models
