@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-export const JWT_SECRET = "jdahbjncwihfk"
+export const JWT_SECRET = "jdahbjncwihfk"                      //need to export individually both secret key and function
 
 export function auth(req, res, next) {
     const token = req.headers.token
