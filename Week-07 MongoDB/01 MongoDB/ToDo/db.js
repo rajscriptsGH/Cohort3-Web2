@@ -4,7 +4,7 @@ const ObjectId = Schema.ObjectId;
 
 //Schema of my db
 const User = new Schema({
-    username: String,
+    username: { type: String, unique: true },             //email
     password: String,
     age: Number,
     name: String
@@ -15,6 +15,7 @@ const ToDo = new Schema({
     userId: ObjectId
 });
 
+//Models
 //let insert data in User using Model and // Prevent OverwriteModelError 
 const UserModel = mongoose.models.users || mongoose.model('users', User);
 const TodoModel = mongoose.models.todos || mongoose.model('todos', ToDo);
