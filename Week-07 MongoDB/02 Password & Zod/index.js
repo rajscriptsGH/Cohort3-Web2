@@ -15,13 +15,13 @@ app.use(express.json())
 
 app.post('/signup', async (req, res) => {
 
-    const username = req.body.username
-    const password = req.body.password
-    const name = req.body.name
-    const age = req.body.age
-
-    //Hashing
     try {
+        const username = req.body.username
+        const password = req.body.password
+        const name = req.body.name
+        const age = req.body.age
+
+        //Hashing
         const hashedPassword = await bcrypt.hash(password, 5)
         console.log(hashedPassword);
 
@@ -31,17 +31,18 @@ app.post('/signup', async (req, res) => {
             password: hashedPassword,
             age: age,
             name: name
+        });
+
+        res.json({
+            username: username,
+            msg: "U are signed up"
         })
+
     } catch (e) {
-        console.log("Error", e);
-
+        res.status(500).json({
+            msg: "Error while signing up"
+        })
     }
-
-
-    res.json({
-        username: username,
-        msg: "U are signed up"
-    })
 })
 app.post('/signin', async (req, res) => {
     const username = req.body.username
