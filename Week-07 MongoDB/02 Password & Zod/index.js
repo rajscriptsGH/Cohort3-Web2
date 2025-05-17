@@ -20,8 +20,13 @@ app.post('/signup', async (req, res) => {
     const name = req.body.name
     const age = req.body.age
 
+    //Hashing
+    const hashedPassword = await bcrypt.hash(password, 5)
+    console.log(hashedPassword);
+
+
     //data insert here
-    await UserModel.create({                              //this return promise, so have to await
+    await UserModel.create({
         username: username,
         password: password,
         age: age,
