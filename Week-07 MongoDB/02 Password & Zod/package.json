@@ -16,7 +16,8 @@
     "bcrypt": "^6.0.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.14.3"
+    "mongoose": "^8.14.3",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

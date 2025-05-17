@@ -5,6 +5,8 @@ import { auth, JWT_SECRET } from './auth.js'              //imported from auth f
 import mongoose from 'mongoose'                           //database
 import { UserModel, TodoModel } from './db.js'            //Model imported
 
+import z from 'zod'
+
 await mongoose.connect("mongodb+srv://rajscripts100x:Fd34oovuyS5NIYsJ@cluster0.mqrp3kn.mongodb.net/todo-razz-6363")
 const app = express()
 const port = 3000;
@@ -13,19 +15,42 @@ app.use(express.json())
 
 app.post('/signup', async (req, res) => {
     try {
+        //Schema for zod
+        const reqBody = z.object({
+            username: z.string().min(4).max(100).email(),
+            password: z.string().min(4).max(20),
+            name: z.string().min(4).max(100),
+            age: z.number()
+        })
+
+        //parsing for zod
+        // const parseData = reqBody.parse(req.body);
+        const parseDataWithSuccess = reqBody.safeParse(req.body);
+
+        if (!parseDataWithSuccess) {
+            res.json({
+                msg: "Invalid input"
+            })
+            return
+        }
+
         const username = req.body.username
         const password = req.body.password
         const name = req.body.name
         const age = req.body.age
 
-        if (typeof username !== 'string' || username.length < 5 || !username.includes('@')) {
-            res.json({
-                msg: "Incorrect email"
-            })
-            return
-        }
+        // //ugly way to validate
+        // if (typeof username !== 'string' || username.length < 5 || !username.includes('@')) {
+        //     res.json({
+        //         msg: "Incorrect email"
+        //     })
+        //     return
+        // }
+
+
 
         //Hashing
+
         const hashedPassword = await bcrypt.hash(password, 5)
         console.log(hashedPassword);
 
