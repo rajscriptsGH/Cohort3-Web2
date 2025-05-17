@@ -27,9 +27,10 @@ app.post('/signup', async (req, res) => {
         // const parseData = reqBody.parse(req.body);
         const parseDataWithSuccess = reqBody.safeParse(req.body);
 
-        if (!parseDataWithSuccess) {
+        if (!parseDataWithSuccess.success) {
             res.json({
-                msg: "Invalid input"
+                msg: "Invalid input",
+                error: parseDataWithSuccess.error
             })
             return
         }
