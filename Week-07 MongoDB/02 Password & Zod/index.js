@@ -1,8 +1,9 @@
 import express, { json } from 'express'
-import jwt from 'jsonwebtoken'                                        //import for auth
-import { auth, JWT_SECRET } from './auth.js'                          //imported from auth file to get token here
-import mongoose from 'mongoose'                                       //database
-import { UserModel, TodoModel } from './db.js'                        //Model imported
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'                            //import for auth
+import { auth, JWT_SECRET } from './auth.js'              //imported from auth file to get token here
+import mongoose from 'mongoose'                           //database
+import { UserModel, TodoModel } from './db.js'            //Model imported
 
 await mongoose.connect("mongodb+srv://rajscripts100x:Fd34oovuyS5NIYsJ@cluster0.mqrp3kn.mongodb.net/todo-razz-6363")
 const app = express()
