@@ -17,3 +17,7 @@
 # Salting
 
 Process of adding random value to passing before hashing so that it remains unique
+
+# Bcrypt
+
+It is a cryptographic hashing algorithm designed for securely hashing passwords
