@@ -21,17 +21,23 @@ app.post('/signup', async (req, res) => {
     const age = req.body.age
 
     //Hashing
-    const hashedPassword = await bcrypt.hash(password, 5)
-    console.log(hashedPassword);
+    try {
+        const hashedPassword = await bcrypt.hash(password, 5)
+        console.log(hashedPassword);
+
+        //data insert here
+        await UserModel.create({
+            username: username,
+            password: hashedPassword,
+            age: age,
+            name: name
+        })
+    } catch (e) {
+        console.log("Error", e);
+
+    }
 
 
-    //data insert here
-    await UserModel.create({
-        username: username,
-        password: password,
-        age: age,
-        name: name
-    })
     res.json({
         username: username,
         msg: "U are signed up"
@@ -42,11 +48,20 @@ app.post('/signin', async (req, res) => {
     const password = req.body.password
 
     const user = await UserModel.findOne({
-        username: username,
-        password: password
+        username: username, //get me the user with this email
     })
 
-    if (user) {
+    //if email not matched, error
+    if (!user) {
+        res.status(403).json({
+            msg: "User not found"
+        })
+        return
+    }
+
+    const passwordMatch = await bcrypt.compare(password, user.password)
+
+    if (passwordMatch) {
         const token = jwt.sign({
             id: user._id.toString()
         }, JWT_SECRET);

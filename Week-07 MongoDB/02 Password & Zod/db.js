@@ -17,8 +17,8 @@ const ToDo = new Schema({
 
 //Models
 //let insert data in User using Model and // Prevent OverwriteModelError 
-const UserModel = mongoose.models.users || mongoose.model('users', User);
-const TodoModel = mongoose.models.todos || mongoose.model('todos', ToDo);
+const UserModel = mongoose.model('users', User);
+const TodoModel = mongoose.model('todos', ToDo);
 
 //to user these model in other js file, we need to export this file
 export {
