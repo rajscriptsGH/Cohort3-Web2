@@ -9,17 +9,21 @@ await mongoose.connect("mongodb+srv://rajscripts100x:Fd34oovuyS5NIYsJ@cluster0.m
 const app = express()
 const port = 3000;
 
-
-
 app.use(express.json())
 
 app.post('/signup', async (req, res) => {
-
     try {
         const username = req.body.username
         const password = req.body.password
         const name = req.body.name
         const age = req.body.age
+
+        if (typeof username !== 'string' || username.length < 5 || !username.includes('@')) {
+            res.json({
+                msg: "Incorrect email"
+            })
+            return
+        }
 
         //Hashing
         const hashedPassword = await bcrypt.hash(password, 5)
