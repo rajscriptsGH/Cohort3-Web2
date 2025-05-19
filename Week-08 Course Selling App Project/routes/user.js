@@ -19,7 +19,7 @@ userRouter.post('/signin', (req, res) => {
         msg: "signin endpoint"
     })
 })
-userRouter.post('/purchases', (req, res) => {
+userRouter.get('/purchases', (req, res) => {
     res.json({
         msg: "user purchases endpoint"
     })

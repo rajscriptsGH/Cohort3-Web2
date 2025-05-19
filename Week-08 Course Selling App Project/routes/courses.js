@@ -3,17 +3,18 @@ const courseRouter = Router()
 
 
 
-courseRouter.post('/', (req, res) => {
-    res.json({
-        msg: "course endpoint"
-    })
-})
-
 courseRouter.post('/purchases', (req, res) => {
     res.json({
         msg: "course purchases endpoint"
     })
 })
+
+courseRouter.get('/preview', (req, res) => {
+    res.json({
+        msg: "course preview endpoint"
+    })
+})
+
 courseRouter.post('/delete', (req, res) => {
     res.json({
         msg: "delete course' endpoint"
