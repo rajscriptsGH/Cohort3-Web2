@@ -15,6 +15,12 @@ app.use('/admin', adminRouter)
 app.use('/course', courseRouter)
 
 
-app.listen(port, () => {
-    console.log(`Server is running st port: ${port}`);
-})
+async function connectMongodb() {
+    await mongoose.connect('mongodb+srv://rajscripts100x:Fd34oovuyS5NIYsJ@cluster0.mqrp3kn.mongodb.net/10xDev')
+    app.listen(port, () => {
+        console.log(`Server is running st port: ${port}`);
+    })
+    console.log("connected");
+}
+
+connectMongodb()
