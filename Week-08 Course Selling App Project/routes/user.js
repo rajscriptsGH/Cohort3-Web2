@@ -9,6 +9,8 @@ import { Router } from 'express'
 //Creating a modular router
 const userRouter = Router()
 
+import { userModel } from '../db.js'
+
 userRouter.post('/signup', (req, res) => {
     res.json({
         msg: "signup endpoint"
