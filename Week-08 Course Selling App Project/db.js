@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Types.ObjectId
 
-mongoose.connect
+mongoose.connect('mongodb+srv://rajscripts100x:Fd34oovuyS5NIYsJ@cluster0.mqrp3kn.mongodb.net/10xDev')
 
 const userSchema = new Schema({
     // _id: ObjectId,
@@ -35,10 +35,10 @@ const purchaseSchema = new Schema({
     courseId: ObjectId
 })
 
-const userModel = mongoose.Model('user', userSchema)
-const adminModel = mongoose.Model('user', adminSchema)
-const courseModel = mongoose.Model('user', courseSchema)
-const purchaseModel = mongoose.Model('user', purchaseSchema)
+const userModel = mongoose.model('user', userSchema)
+const adminModel = mongoose.model('admin', adminSchema)
+const courseModel = mongoose.model('course', courseSchema)
+const purchaseModel = mongoose.model('purchase', purchaseSchema)
 
 export {
     userModel, adminModel, courseModel, purchaseModel
