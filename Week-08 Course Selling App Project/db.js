@@ -1,18 +1,17 @@
 
 import mongoose from 'mongoose'
-
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Types.ObjectId
 
 const userSchema = new Schema({
-    _id: ObjectId,
-    email: String,
+    // _id: ObjectId,
+    email: { type: String, unique: true },
     password: String,
     firstName: String,
     lastName: String
 })
 const adminSchema = new Schema({
-    _id: ObjectId,
+    // _id: ObjectId,
     email: String,
     password: String,
     firstName: String,
@@ -20,7 +19,7 @@ const adminSchema = new Schema({
 })
 
 const courseSchema = new Schema({
-    _id: ObjectId,
+    // _id: ObjectId,
     title: String,
     desc: String,
     price: Number,
@@ -29,9 +28,9 @@ const courseSchema = new Schema({
 })
 
 const purchaseSchema = new Schema({
-    _id: ObjectId,
-    courseId: ObjectId,
-    userId: ObjectId
+    // _id: ObjectId,
+    userId: ObjectId,
+    courseId: ObjectId
 })
 
 const userModel = mongoose.Model('user', userSchema)
