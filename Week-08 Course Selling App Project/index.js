@@ -4,8 +4,8 @@ import mongoose from 'mongoose'
 import userRouter from './routes/user.js'
 import courseRouter from './routes/courses.js'
 import adminRouter from './routes/admin.js'
-import userAuth from './middleware/userMW.js'
-import adminAuth from './middleware/adminMW.js'
+import userAuth from './middleware/user.js'
+import adminAuth from './middleware/admin.js'
 
 const app = express()
 const port = 3000;
