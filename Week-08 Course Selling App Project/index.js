@@ -16,6 +16,7 @@ app.use('/course', courseRouter)
 
 
 async function connectMongodb() {
+    //use dotenv to store mongodb
     await mongoose.connect('mongodb+srv://rajscripts100x:Fd34oovuyS5NIYsJ@cluster0.mqrp3kn.mongodb.net/10xDev')
     app.listen(port, () => {
         console.log(`Server is running st port: ${port}`);
