@@ -4,6 +4,11 @@ const adminRouter = Router()
 import { adminModel } from '../db.js'
 
 adminRouter.post('/signup', (req, res) => {
+    const email = req.body.email
+    const password = req.body.password
+
+
+
     res.json({
         msg: "Admin signup"
     })
