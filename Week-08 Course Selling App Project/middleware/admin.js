@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
 
-export function adminMiddleware(req, res, next) {
+ function adminMiddleware(req, res, next) {
 
 }
