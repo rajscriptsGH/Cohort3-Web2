@@ -1,22 +1,70 @@
-// Organizing routes cleanly under / user/*
 
-// import express from 'express'
-// const Router = express.Router
+import { Router } from 'express'                            //Using ES Module syntax: 
+const userRouter = Router()                               //Creating a modular router
+import { userModel } from "../db.js";
+import bcrypt from 'bcrypt'
+import z from 'zod'
+import jwt from 'jsonwebtoken'
+const JWT_USER_PASSWORD = 'ldkflfhid'
 
 
-//Using ES Module syntax: 
-import { Router } from 'express'
-//Creating a modular router
-const userRouter = Router()
+userRouter.post('/signup', async (req, res) => {
+    const { email, password, firstName, lastName } = req.body;
 
-import { userModel } from '../db.js'
-
-userRouter.post('/signup', (req, res) => {
-    res.json({
-        msg: "signup endpoint"
+    //Use zod for validation
+    const reqBody = z.object({
+        email: z.string().email().includes('@'),
+        password: z.string().min(6).max(20),
+        firstName: z.string().min(3).max(50),
+        lastName: z.string().min(3).max(50)
     })
-})
-userRouter.post('/signin', (req, res) => {
+
+    const parseBodyWithSucess = reqBody.safeParse(req.body)
+    if (!parseBodyWithSucess.success) {
+        res.status(403).json({
+            error: parseBodyWithSucess.error
+        })
+        return
+    }
+
+    //hash the password
+    const hashPassword = await bcrypt.hash(password, 5)
+    try {
+        await userModel.create({
+            email: email,
+            password: hashPassword,
+            firstName: firstName,
+            lastName: lastName
+        })
+    } catch (e) {
+        console.log("Error: ", e);
+
+    }
+    res.json({
+        msg: "User signed up"
+    })
+});
+
+userRouter.post('/signin', async (req, res) => {
+    const { email, password } = req.body;
+
+    const user = await userModel.find({
+        email: email,
+        password: password
+    })
+
+    if (user) {
+        const token = jwt.sign({
+            id: user._id
+        }, JWT_USER_PASSWORD)
+        res.json({
+            token
+        })
+    } else {
+        res.status(403).json({
+            msg: "User not found"
+        })
+    }
     res.json({
         msg: "signin endpoint"
     })
