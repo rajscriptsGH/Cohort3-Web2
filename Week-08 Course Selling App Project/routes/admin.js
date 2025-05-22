@@ -27,22 +27,27 @@ adminRouter.post('/signup', async (req, res) => {
 
     //hash the password
     const hashPassword = await bcrypt.hash(password, 5)
+    try {
+        await userModel.create({
+            email: email,
+            password: hashPassword,
+            firstName: firstName,
+            lastName: lastName
+        })
+    } catch (e) {
+        console.log("Error: ", e);
 
-    await userModel.create({
-        email: email,
-        password: hashPassword,
-        firstName: firstName,
-        lastName: lastName
-    })
+    }
+
 
     res.json({
-        msg: "Admin signup"
+        msg: "User signed up"
     })
 
 })
 adminRouter.post('/signin', (req, res) => {
     res.json({
-        msg: "Admin signin"
+        msg: "User signed in"
     })
 })
 
