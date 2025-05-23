@@ -48,27 +48,35 @@ userRouter.post('/signup', async (req, res) => {
 userRouter.post('/signin', async (req, res) => {
     const { email, password } = req.body;
 
+    //since I have already hashed password, it cant ne verified using password anymore,
+
+    // 1. Find user by email only
     const user = await userModel.findOne({
-        email: email,
-        password: password
+        email: email
     })
 
-    if (user) {
-        const token = jwt.sign({
-            id: user._id
-        }, JWT_USER_PASSWORD)
-
-        res.json({
-            token: token
-        })
-
-    } else {
-        res.status(403).json({
+    if (!user) {
+        return res.status(403).json({
             msg: "User not found"
         })
     }
+
+    // 2. Compare password
+    const isPasswordValid = await bcrypt.compare(password, user.password)
+    if (!isPasswordValid) {
+        return res.status(403).json({
+            msg: "Invalid password"
+        })
+    }
+
+    //  3. sign for JWT token
+    const token = jwt.sign({
+        id: user._id
+    }, JWT_USER_PASSWORD)
+
     res.json({
-        msg: "signin endpoint"
+        token: token,
+        msg: "signed in successfully"
     })
 })
 
