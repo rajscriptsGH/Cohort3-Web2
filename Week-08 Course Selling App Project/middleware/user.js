@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
 
- function userMiddleware(req, res, next) {
+export function userMiddleware(req, res, next) {
 
 }
