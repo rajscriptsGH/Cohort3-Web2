@@ -71,6 +71,7 @@ userRouter.post('/signin', async (req, res) => {
         msg: "signin endpoint"
     })
 })
+
 userRouter.get('/purchases', (req, res) => {
     res.json({
         msg: "user purchases endpoint"
