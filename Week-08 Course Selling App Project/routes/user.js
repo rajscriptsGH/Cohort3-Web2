@@ -48,7 +48,7 @@ userRouter.post('/signup', async (req, res) => {
 userRouter.post('/signin', async (req, res) => {
     const { email, password } = req.body;
 
-    const user = await userModel.find({
+    const user = await userModel.findOne({
         email: email,
         password: password
     })
@@ -57,9 +57,11 @@ userRouter.post('/signin', async (req, res) => {
         const token = jwt.sign({
             id: user._id
         }, JWT_USER_PASSWORD)
+
         res.json({
-            token
+            token: token
         })
+
     } else {
         res.status(403).json({
             msg: "User not found"
