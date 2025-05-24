@@ -79,32 +79,38 @@ adminRouter.post('/signin', async (req, res) => {
 
 
 adminRouter.post('/courses', adminMiddleware, async (req, res) => {
-    const adminId = req.userId
+    const adminId = req.adminId
 
     const { title, desc, price, imgUrl } = req.body
 
-    const course = await courseModel.create({
-        title: title,
-        desc: desc,
-        price: price,
-        imgUrl: imgUrl,
-        adminId: adminId
-    })
+    try {
+        const course = await courseModel.create({
+            title: title,
+            desc: desc,
+            price: price,
+            imgUrl: imgUrl,
+            createrId: adminId
+        })
 
-    res.json({
-        msg: "Course created",
-        courseId: course._id
-    })
+        res.json({
+            msg: "Course created",
+            courseId: course._id
+        })
+    } catch (error) {
+        console.error("Creation error", error)
+        res.status(500).json({ msg: "Server error" });
+    }
 })
 
+//Update a course
 adminRouter.put('/courses', adminMiddleware, async (req, res) => {
-    const adminId = req.userId
+    const adminId = req.adminId
 
     const { title, desc, price, imgUrl, courseId } = req.body
 
     const course = await courseModel.updateOne({
         _id: courseId,            //Match course by id
-        courseId: adminId          //ensure admin is the creater of course
+        creatorId: adminId          //ensure admin is the creater of course
     }, {
         title: title,
         desc: desc,
@@ -114,19 +120,20 @@ adminRouter.put('/courses', adminMiddleware, async (req, res) => {
 
     res.json({
         msg: "Course updated",
-        courseId: course._id
+        createrId
     })
 })
 
 adminRouter.get('/courses', adminMiddleware, async (req, res) => {
-    const adminId = req.userId;
+    const adminId = req.adminId;
 
     const courses = await courseModel.find({
-        createrid: adminId
+        createrId: adminId
     })
 
     res.json({
-        msg: "get Admin course"
+        msg: "get Admin course",
+        courses: courses
     })
 })
 adminRouter.delete('/courses', (req, res) => {

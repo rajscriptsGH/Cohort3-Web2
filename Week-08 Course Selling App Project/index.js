@@ -13,8 +13,8 @@ const port = 3000;
 
 app.use(express.json())
 
-app.use('/user', userMiddleware, userRouter)
-app.use('/admin', adminMiddleware, adminRouter)
+app.use('/user', userRouter)
+app.use('/admin', adminRouter)
 app.use('/course', courseRouter)
 
 
