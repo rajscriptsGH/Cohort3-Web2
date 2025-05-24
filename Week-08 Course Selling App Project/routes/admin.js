@@ -4,7 +4,8 @@ import { adminModel } from "../db.js";
 import bcrypt from 'bcrypt'
 import z from 'zod'
 import jwt from 'jsonwebtoken'
-const JWT_ADMIN_PASSWORD = 'ldkfldffhid'
+import { JWT_ADMIN_PASSWORD } from "../config.js";
+import { adminMiddleware } from "../middleware/admin.js";
 
 adminRouter.post('/signup', async (req, res) => {
     const { email, password, firstName, lastName } = req.body;
@@ -76,9 +77,23 @@ adminRouter.post('/signin', async (req, res) => {
 
 })
 
-adminRouter.post('/courses', (req, res) => {
+
+adminRouter.post('/courses', adminMiddleware, async (req, res) => {
+    const adminId = req.userId
+
+    const { title, desc, price, imgUrl } = req.body
+
+    const course = await courseModel.create({
+        title: title,
+        desc: desc,
+        price: price,
+        imgUrl: imgUrl,
+        adminId: adminId
+    })
+
     res.json({
-        msg: "Admin course"
+        msg: "Course created",
+        courseId: course._id
     })
 })
 adminRouter.get('/courses', (req, res) => {
