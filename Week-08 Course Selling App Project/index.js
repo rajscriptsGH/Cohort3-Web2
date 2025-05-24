@@ -1,21 +1,18 @@
 import express from 'express'
-import jwt from 'jsonwebtoken'
 import mongoose from 'mongoose'
-
-import bcrypt from 'bcrypt'
 import userRouter from './routes/user.js'
 import courseRouter from './routes/courses.js'
 import adminRouter from './routes/admin.js'
-// import userAuth from './middleware/user.js'
-// import adminAuth from './middleware/admin.js'
+import { userMiddleware } from './middleware/user.js'
+import { adminMiddleware } from './middleware/admin.js'
 
 const app = express()
 const port = 3000;
 
 app.use(express.json())
 
-app.use('/user', userRouter)
-app.use('/admin', adminRouter)
+app.use('/user', userMiddleware, userRouter)
+app.use('/admin', adminMiddleware, adminRouter)
 app.use('/course', courseRouter)
 
 
