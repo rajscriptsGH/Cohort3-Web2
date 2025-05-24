@@ -1,3 +1,6 @@
+import 'dotenv/config'
+console.log(process.env.MONGODB_URL);
+
 import express from 'express'
 import mongoose from 'mongoose'
 import userRouter from './routes/user.js'
@@ -18,7 +21,7 @@ app.use('/course', courseRouter)
 
 async function connectMongodb() {
     //use dotenv to store mongodb
-    await mongoose.connect('mongodb+srv://rajscripts100x:Fd34oovuyS5NIYsJ@cluster0.mqrp3kn.mongodb.net/10xDev')
+    await mongoose.connect(process.env.MONGODB_URL)
     app.listen(port, () => {
         console.log(`Server is running st port: ${port}`);
     })
