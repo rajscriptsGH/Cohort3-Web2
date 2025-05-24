@@ -5,7 +5,7 @@ import { userModel } from "../db.js";
 import bcrypt from 'bcrypt'
 import z from 'zod'
 import jwt from 'jsonwebtoken'
-const JWT_USER_PASSWORD = 'ldkflfhid'
+import { JWT_USER_PASSWORD } from '../config.js';
 
 
 userRouter.post('/signup', async (req, res) => {
