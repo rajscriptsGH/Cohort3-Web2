@@ -1,6 +1,6 @@
 import { Router } from "express";
 const adminRouter = Router()
-import { adminModel } from "../db.js";
+import { adminModel, courseModel } from "../db.js";
 import bcrypt from 'bcrypt'
 import z from 'zod'
 import jwt from 'jsonwebtoken'
@@ -97,22 +97,42 @@ adminRouter.post('/courses', adminMiddleware, async (req, res) => {
     })
 })
 
-adminRouter.put('/courses', (req, res) => {
+adminRouter.put('/courses', adminMiddleware, async (req, res) => {
+    const adminId = req.userId
 
+    const { title, desc, price, imgUrl, courseId } = req.body
+
+    const course = await courseModel.updateOne({
+        _id: courseId,            //Match course by id
+        courseId: adminId          //ensure admin is the creater of course
+    }, {
+        title: title,
+        desc: desc,
+        price: price,
+        imgUrl: imgUrl,
+    })
 
     res.json({
-        msg: "Admin put course"
+        msg: "Course updated",
+        courseId: course._id
     })
 })
 
-adminRouter.get('/courses', (req, res) => {
+adminRouter.get('/courses', adminMiddleware, async (req, res) => {
+    const adminId = req.userId;
+
+    const courses = await courseModel.find({
+        createrid: adminId
+    })
+
     res.json({
         msg: "get Admin course"
     })
 })
 adminRouter.delete('/courses', (req, res) => {
     res.json({
-        msg: "Admin delete course"
+        msg: "Admin delete course",
+        courses: courses
     })
 })
 
