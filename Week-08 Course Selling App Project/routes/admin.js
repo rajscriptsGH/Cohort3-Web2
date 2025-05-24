@@ -96,14 +96,18 @@ adminRouter.post('/courses', adminMiddleware, async (req, res) => {
         courseId: course._id
     })
 })
+
+adminRouter.put('/courses', (req, res) => {
+
+
+    res.json({
+        msg: "Admin put course"
+    })
+})
+
 adminRouter.get('/courses', (req, res) => {
     res.json({
         msg: "get Admin course"
-    })
-})
-adminRouter.put('/courses', (req, res) => {
-    res.json({
-        msg: "Admin put course"
     })
 })
 adminRouter.delete('/courses', (req, res) => {
