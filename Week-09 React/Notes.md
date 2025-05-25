@@ -11,3 +11,23 @@ React is a JavaScript library for building user interfaces, especially single-pa
 🔄 Declarative Syntax: You describe what the UI should look like.
 
 🧠 State Management: Easily manage dynamic data with hooks.
+
+# What JSX Is and How to Write Basic Components
+
+JSX (JavaScript XML) is a syntax that looks like HTML but runs in JavaScript.
+
+Example:
+
+**function App() {
+return <h1>Hello React!</h1>;
+}**
+
+# JSX Rules:
+
+You can write HTML-like syntax inside JS files.
+
+You must return only one root element.
+
+You can embed variables with {}.
+
+Class attributes become className.
