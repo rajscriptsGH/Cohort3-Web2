@@ -1,18 +1,30 @@
 import { Router } from 'express'
 const courseRouter = Router()
+import userMiddleware from '../middleware/user.js'
 
 import { courseModel, purchaseModel } from '../db.js'
 
 
-courseRouter.post('/purchases', (req, res) => {
+courseRouter.post('/purchases', userMiddleware, async (req, res) => {
+    const userId = req.userId
+    const courseId = req.courseId;
+
+    await purchaseModel.create({
+        userId,
+        courseId
+    })
+
     res.json({
-        msg: "course purchases endpoint"
+        msg: "U have successfully purchased course"
     })
 })
 
-courseRouter.get('/preview', (req, res) => {
+courseRouter.get('/preview', async (req, res) => {
+    const courses = await courseModel.find({})
+
     res.json({
-        msg: "course preview endpoint"
+        msg: "Your courses",
+        courses
     })
 })
 
