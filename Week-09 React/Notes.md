@@ -18,7 +18,8 @@ JSX (JavaScript XML) is a syntax that looks like HTML but runs in JavaScript.
 
 Example:
 
-```function App() {
+```
+function App() {
 return <h1>Hello React!</h1>;
 }
 ```
