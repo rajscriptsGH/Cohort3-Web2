@@ -1,6 +1,6 @@
 import { Router } from 'express'                            //Using ES Module syntax: 
 const userRouter = Router()                               //Creating a modular router
-import { purchaseModel, userModel } from "../db.js";
+import { courseModel, purchaseModel, userModel } from "../db.js";
 import bcrypt from 'bcrypt'
 import z from 'zod'
 import jwt from 'jsonwebtoken'
@@ -86,9 +86,19 @@ userRouter.get('/purchases', userMiddleware, async (req, res) => {
     const purchases = await purchaseModel.find({
         userId
     })
+
+    let purchasedCourseIds = []
+    for (let i = 0; i < purchases; i++) {
+        purchasedCourseIds.push(purchases[i].courseId)
+    }
+
+    const courseData = await courseModel.find({
+        _id: { $in: purchasedCourseIds }
+    })
     res.json({
         msg: "Your purchased courses",
-        purchases
+        purchases,
+        courseData
     })
 })
 
