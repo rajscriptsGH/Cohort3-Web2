@@ -1,7 +1,8 @@
+import 'dotenv/config'
 import jwt from 'jsonwebtoken'
 import { JWT_ADMIN_PASSWORD } from '../config.js'
 
-export function adminMiddleware(req, res, next) {
+export default function adminMiddleware(req, res, next) {
     const token = req.headers.token
 
     const decoded = jwt.verify(token, JWT_ADMIN_PASSWORD)

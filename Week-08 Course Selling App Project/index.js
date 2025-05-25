@@ -5,8 +5,6 @@ import mongoose from 'mongoose'
 import userRouter from './routes/user.js'
 import courseRouter from './routes/courses.js'
 import adminRouter from './routes/admin.js'
-import { userMiddleware } from './middleware/user.js'
-import { adminMiddleware } from './middleware/admin.js'
 
 const app = express()
 const port = 3000;

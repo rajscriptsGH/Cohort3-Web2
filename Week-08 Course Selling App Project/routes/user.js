@@ -1,4 +1,3 @@
-
 import { Router } from 'express'                            //Using ES Module syntax: 
 const userRouter = Router()                               //Creating a modular router
 import { purchaseModel, userModel } from "../db.js";
@@ -6,7 +5,7 @@ import bcrypt from 'bcrypt'
 import z from 'zod'
 import jwt from 'jsonwebtoken'
 import { JWT_USER_PASSWORD } from '../config.js';
-import { userMiddleware } from '../middleware/user.js';
+import userMiddleware from '../middleware/user.js';
 
 
 userRouter.post('/signup', async (req, res) => {

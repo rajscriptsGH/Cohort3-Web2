@@ -5,7 +5,8 @@ import bcrypt from 'bcrypt'
 import z from 'zod'
 import jwt from 'jsonwebtoken'
 import { JWT_ADMIN_PASSWORD } from "../config.js";
-import { adminMiddleware } from "../middleware/admin.js";
+import adminMiddleware from "../middleware/admin.js";
+
 
 adminRouter.post('/signup', async (req, res) => {
     const { email, password, firstName, lastName } = req.body;
