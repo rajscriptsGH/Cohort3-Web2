@@ -1,11 +1,12 @@
 
 import { Router } from 'express'                            //Using ES Module syntax: 
 const userRouter = Router()                               //Creating a modular router
-import { userModel } from "../db.js";
+import { purchaseModel, userModel } from "../db.js";
 import bcrypt from 'bcrypt'
 import z from 'zod'
 import jwt from 'jsonwebtoken'
 import { JWT_USER_PASSWORD } from '../config.js';
+import { userMiddleware } from '../middleware/user.js';
 
 
 userRouter.post('/signup', async (req, res) => {
@@ -80,9 +81,15 @@ userRouter.post('/signin', async (req, res) => {
     })
 })
 
-userRouter.get('/purchases', (req, res) => {
+userRouter.get('/purchases', userMiddleware, async (req, res) => {
+    const userId = req.userId;
+
+    const purchases = await purchaseModel.find({
+        userId
+    })
     res.json({
-        msg: "user purchases endpoint"
+        msg: "Your purchased courses",
+        purchases
     })
 })
 
