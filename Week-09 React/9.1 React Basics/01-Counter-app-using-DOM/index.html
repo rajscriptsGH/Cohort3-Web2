@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter app</title>
+</head>
+<style>
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    button {
+        height: 40px;
+        width: 120px;
+        text-align: center;
+        background: blue;
+        color: #fff;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        padding: 12px;
+        margin-top: 10px;
+    }
+</style>
+
+<body>
+    <div class="counter">0</div>
+    <button id="btn" onclick="clickButton()">Click me</button>
+
+    <script>
+        function clickButton() {
+            let currentValue = document.querySelector('.counter').innerHTML
+            // console.log(currentValue);
+            const newValue = parseInt(currentValue) + 1
+            console.log(newValue);
+            document.querySelector('.counter').innerHTML = newValue
+
+        }
+        clickButton()
+    </script>
+</body>
+
+</html>
