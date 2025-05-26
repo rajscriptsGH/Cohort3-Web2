@@ -49,7 +49,6 @@ userRouter.post('/signin', async (req, res) => {
     const { email, password } = req.body;
 
     //since I have already hashed password, it cant ne verified using password anymore,
-
     // 1. Find user by email only
     const user = await userModel.findOne({
         email: email

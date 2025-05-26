@@ -78,7 +78,6 @@ adminRouter.post('/signin', async (req, res) => {
 
 })
 
-
 adminRouter.post('/courses', adminMiddleware, async (req, res) => {
     const adminId = req.adminId
 

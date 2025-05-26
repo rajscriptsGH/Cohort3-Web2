@@ -1,31 +1,32 @@
-# Create a course selling app
+# 10x App 🚀
 
-- Initialize a new Node.js project
+**10x App** is a full-stack e-learning platform where users can explore and purchase courses on Web Development, App Development, UI/UX Design, Video Editing, and other trending tech skills.
 
-- Add Express, jsonwebtoken, mongoose to it as a dependency
+This project is built using:
 
-- Create index.js
+- **Node.js** & **Express.js** for the backend
+- **MongoDB** for the database
+- **JWT Authentication** for secure access
+- Modular and scalable route structure
 
-- Add route skeleton for user login, signup, purchase a course, sees all courses, sees the purchased courses course
+## ✨ Features
 
-- Add routes for admin login, admin signup, create a course, delete a course, add course content.
+- 👩‍💻 Admin & User authentication with JWT
+- 📚 Course creation, update, and management
+- 🔐 Protected routes with custom middleware
+- 📦 Scalable project structure with best practices
+- ⚙️ Modern validation using `zod`
+- 💡 Easy to extend for other tech domains or features
 
-- Define the schema for User, Admin, Course, Purchase
+## 📦 Tech Stack
 
-- Add a database (mongodb), use dotenv to store the database connection string
+- Node.js
+- Express.js
+- MongoDB & Mongoose
+- JSON Web Tokens (JWT)
+- Zod (for validation)
+- dotenv
 
-- Add middlewares for user and admin auth
+---
 
-- Complete the routes for user login, signup, purchase a course, see course (Extra points - Use express routing to better structure your routes)
-
-- Create the frontend
-
-\*Good to haves
-
-- Use cookies instead of JWT for auth
-
-- Add a rate limiting middleware
-
-- Frontend in ejs (low pri)
-
-- Frontend in React
+Feel free to fork, clone, and contribute! 🙌

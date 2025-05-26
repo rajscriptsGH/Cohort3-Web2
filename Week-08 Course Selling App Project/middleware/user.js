@@ -1,4 +1,5 @@
 import 'dotenv/config'
+
 import jwt from 'jsonwebtoken'
 import { JWT_USER_PASSWORD } from '../config.js'
 
