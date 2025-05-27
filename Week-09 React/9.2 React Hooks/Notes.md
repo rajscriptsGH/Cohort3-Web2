@@ -32,6 +32,8 @@ useEffect(() => {
 
 * The second argument (dependencies) controls when it runs
 
+# Common Use Cases
+
 | Task                     | `useEffect` Use? |
 | ------------------------ | ---------------- |
 | Fetching data            | ✅               |
