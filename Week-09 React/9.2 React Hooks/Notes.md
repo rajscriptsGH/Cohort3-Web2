@@ -9,6 +9,6 @@
 -Before hooks, state was only available in class components. useState brings it to functional components.
 
 -Syntax
-//
-const [state, setState] = useState(initialValue);
-//
+
+- const [state, setState] = useState(initialValue);
+-
