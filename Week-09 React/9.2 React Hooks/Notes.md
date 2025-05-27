@@ -21,12 +21,9 @@ const [state, setState] = useState(initialValue);
 # When to Use useState:
 
 - Form input values
-
-* Toggle flags (show/hide)
-
-* Counters
-
-* Any UI element that updates based on interaction
+- Toggle flags (show/hide)
+- Counters
+- Any UI element that updates based on interaction
 
 # useEffect
 
