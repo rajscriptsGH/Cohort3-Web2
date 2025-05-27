@@ -17,8 +17,8 @@ function App() {
       newArray.push(todos[i]);
     }
     newArray.push({
-      title: "Go for walk",
-      desc: "Go for walk regurarly",
+      title: document.getElementById('title').value,
+      desc: document.getElementById('desc').value,
       done: true
     });
     setTodos(newArray);
@@ -26,8 +26,8 @@ function App() {
 
   return (
     <div>
-      <input type="text"  placeholder='Title'></input>
-      <input type="text" placeholder='Desc'></input>
+      <input id='title' type="text"  placeholder='Title'></input>
+      <input id='desc' type="text" placeholder='Desc'></input>
       <br />
       <button onClick={addTodo}>Add Todo</button>
       <br />
