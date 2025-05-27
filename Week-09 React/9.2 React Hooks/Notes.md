@@ -18,6 +18,16 @@ const [state, setState] = useState(initialValue);
 - setState: A function to update it
 - initialValue: The default starting value
 
+# When to Use useState:
+
+- Form input values
+
+* Toggle flags (show/hide)
+
+* Counters
+
+* Any UI element that updates based on interaction
+
 # useEffect
 
 - useEffect is a React Hook that lets you perform side effects in functional components — like fetching data, listening to events, or updating the DOM
