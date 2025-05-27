@@ -1,0 +1,49 @@
+Notes:
+
+# React
+
+-React is essentially a simpler way to write standard HTML/CSS/JS. It introduces a new syntax that eventually gets compiled down to regular HTML/CSS/JS.
+
+# Why React?
+
+-Developers realized that manipulating the DOM manually was becoming difficult.
+
+-Some libraries like jQuery made it a bit easier, but building large-scale applications still remained challenging.
+
+-Eventually, frameworks like VueJS and React introduced a new syntax to simplify frontend development.
+
+-Behind the scenes, React’s compiler translates your code into HTML/CSS/JS.
+
+# State & Components:
+
+-When building a React application, you mainly focus on two key aspects. Frontend framework creators observed that all web pages can essentially be broken down into:
+i. State
+ii. Component
+
+# State / Component Re-rendering:
+
+i. State:
+
+-Any part of a website that can change is considered state. It’s an object that describes the current condition of the app.
+
+-State reflects the dynamic aspects of your application—those that update over time.
+
+For example, the value in a counter app.
+
+ii. Components:
+
+-Components define how a part of the DOM should appear, based on the state.
+
+-A component is a reusable and dynamic piece of HTML that updates when the state changes.
+
+-For instance, a button is a component. It receives state (like currentCount) and renders accordingly.
+
+iii. A change in state leads to a re-render. Re-rendering means that the actual DOM is updated in response to the new state.
+
+iv. You generally define your components once. After that, you just update the app’s state, and React handles the re-rendering for you.
+
+# JSX:
+
+-JSX means JavaScript XML. It lets us write HTML-like code within React.
+
+-JSX simplifies the process of writing and including HTML in React components.
