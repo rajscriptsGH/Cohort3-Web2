@@ -10,8 +10,8 @@
 
 -Syntax
 
-- const [state, setState] = useState(initialValue);
+`const [state, setState] = useState(initialValue);`
 
-* state: The current value
-* setState: A function to update it
-* initialValue: The default starting value
+- state: The current value
+- setState: A function to update it
+- initialValue: The default starting value
