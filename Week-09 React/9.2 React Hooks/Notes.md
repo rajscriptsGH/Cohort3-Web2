@@ -1,3 +1,18 @@
+# React Hooks
+
+- Hooks are special functions in React that let you "hook into" React features like state, lifecycle, and context — all in functional components (no need for classes!).
+
+# Why Hooks Are Used in React
+
+- Hooks were introduced to simplify and enhance React development. They allow functional components to do things only class components could do before — like handling state, running side effects, and using lifecycle methods.
+  | Problem Before Hooks | How Hooks Help |
+  | ------------------------------- | ------------------------------------------- |
+  | Only class components had state | `useState` brings state to functions |
+  | Messy lifecycle methods | `useEffect` handles side effects cleanly |
+  | Repetitive logic in components | Custom hooks enable reuse |
+  | Complex components hard to read | Hooks organize logic by feature |
+  | `this` confusion | No need for `this` in functional components |
+
 # useState
 
 - useState is a React Hook that lets you add state (dynamic data) to functional components
