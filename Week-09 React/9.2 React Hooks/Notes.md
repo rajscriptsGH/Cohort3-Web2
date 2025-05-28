@@ -13,7 +13,7 @@
   | Complex components hard to read | Hooks organize logic by feature |
   | `this` confusion | No need for `this` in functional components |
 
-# useState
+# 1.useState
 
 - useState is a React Hook that lets you add state (dynamic data) to functional components
 
@@ -40,7 +40,7 @@ const [state, setState] = useState(initialValue);
 - Counters
 - Any UI element that updates based on interaction
 
-# useEffect
+# 2.useEffect
 
 - useEffect is a React Hook that lets you perform side effects in functional components — like fetching data, listening to events, or updating the DOM
 
