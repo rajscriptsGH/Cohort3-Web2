@@ -30,6 +30,7 @@ function Counter(props) {
   useEffect(() => {
     console.log("no useeffect");
   }, [])
+
   useEffect(() => {
     console.log("count useeffect");
   }, [props.count])
