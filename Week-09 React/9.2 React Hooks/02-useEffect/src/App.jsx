@@ -3,7 +3,6 @@ import './App.css'
 
 function App() {
   return <div>
-
    <h1>useEffect</h1>
    <Counter />
   </div>
