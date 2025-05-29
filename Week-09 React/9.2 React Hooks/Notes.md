@@ -63,3 +63,20 @@ useEffect(() => {
 | Event listeners          | ✅               |
 | Timers or intervals      | ✅               |
 | Direct DOM manipulation  | ✅               |
+
+# Conditional Rendering
+
+- Conditional rendering means showing (or hiding) parts of your UI based on a condition (like a boolean, a number, etc.).
+
+In simple words:
+
+- If this is true, show that. If not, show something else or nothing.
+
+# Common Ways to Do Conditional Rendering
+
+| Syntax                 | Use When You Want To...           |
+| ---------------------- | --------------------------------- |
+| `if` before `return`   | Handle multiple `return` branches |
+| `{condition ? A : B}`  | Show one thing or another         |
+| `{condition && A}`     | Show something only if true       |
+| `function returns JSX` | Encapsulate more complex logic    |
