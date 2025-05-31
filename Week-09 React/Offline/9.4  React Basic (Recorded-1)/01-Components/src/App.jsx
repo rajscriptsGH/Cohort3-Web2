@@ -11,8 +11,8 @@ function App() {
       flexDirection: 'column',
       alignItems: 'center',
     }}>
-      <PostComponent />
-      <br />
+      <ProfileComponent />
+
       <PostComponent />
       <br />
       <PostComponent />
@@ -22,9 +22,23 @@ function App() {
 }
 
 function ProfileComponent() {
-  return <div>
-    <div>
-      <img src="" alt="" />
+  return <div style={{ width: 260, marginBottom: 14, backgroundColor: "white", padding: 12, borderRadius: 6 }}>
+    <div style={{ textAlign: 'center' }}>
+      <img src="https://t3.ftcdn.net/jpg/14/60/58/40/240_F_1460584064_SZ7FhrwKuvrOIomUWrMedQkAsYb4nrT9.jpg" style={{
+        height: 130,
+        width: 130,
+        borderRadius: 100
+      }} />
+      <h3>Razz Yadav</h3>
+      <p>Working with ZebraCoins</p>
+    </div>
+    <div style={{ display: 'flex', textAlign: 'center', alignItems: 'center', justifyContent: "space-between", marginTop: 10 }}>
+      <h4>Profile views</h4>
+      <p>34,234</p>
+    </div>
+    <div style={{ display: 'flex', textAlign: 'center', alignItems: 'center', justifyContent: "space-between", marginTop: 10 }}>
+      <h4>Post Impressions</h4>
+      <p>2,234</p>
     </div>
   </div>
 }
