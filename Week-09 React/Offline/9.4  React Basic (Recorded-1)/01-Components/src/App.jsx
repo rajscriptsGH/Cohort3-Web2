@@ -7,16 +7,22 @@ function App() {
       height: '100vh',
       width: '100%',
       display: 'flex',
-      // justifyContent: 'center',
-      flexDirection: 'column',
-      alignItems: 'center',
+      // flexDirection: 'column',
+      // alignItems: 'center',
     }}>
-      <ProfileComponent />
-
-      <PostComponent />
-      <br />
-      <PostComponent />
-      <br />
+      <div style={{ margin: 6, marginRight: 20 }}>
+        <ProfileComponent />
+      </div>
+      <div style={{ margin: 6, marginRight: 20 }}>
+        <PostComponent />
+        <br />
+        <PostComponent />
+        <br />
+        <PostComponent />
+        <br />
+        <PostComponent />
+        <br />
+      </div>
     </div>
   )
 }
