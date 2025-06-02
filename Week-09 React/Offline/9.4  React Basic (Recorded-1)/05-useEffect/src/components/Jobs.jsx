@@ -1,12 +1,9 @@
 import React from 'react'
 
-function Jobs() {
+export function Jobs() {
     return (
         <div>
-            <p>lit. Officia, nisi.</p>
-            <p>lit. Officia, nisi.</p>
-            <p>lit. Officia, nisi.</p>
-            <p>lit. Officia, nisi.</p>
+            <p>Jobs</p>
         </div>
     )
 }
