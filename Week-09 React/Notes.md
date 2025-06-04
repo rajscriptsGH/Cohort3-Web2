@@ -33,3 +33,36 @@ You must return only one root element.
 You can embed variables with {}.
 
 Class attributes become className.
+
+# Components
+
+In React, components are the building blocks of the user interface. They allow you to split the UI into independent, reusable pieces that can be thought of as custom, self-contained HTML elements.
+
+# useState
+
+`useState` is a Hook that lets you add state to functional components. It returns an array with the current state and a function to update it.
+
+# useEffect
+
+Before we understand `useEffect` , let’s understand what are `Side effects`.
+
+## Side effects
+
+Side effects are operations that interact with the outside world or have effects beyond the component's rendering. Examples include:
+
+- **Fetching data** from an API.
+- **Modifying the DOM** manually.
+- **Subscribing to events** (like WebSocket connections, timers, or browser events).
+- **Starting a clock**
+
+These are called side effects because they don't just compute output based on the input—they affect things outside the component itself.
+
+---
+
+### Problem in running side effects in React components
+
+If you try to introduce side effects directly in the rendering logic of a component (in the return statement or before it), React would run that code every time the component renders. This can lead to:
+
+- **Unnecessary or duplicated effects** (like multiple API calls).
+- **Inconsistent behavior** (side effects might happen before rendering finishes).
+- **Performance issues** (side effects could block rendering or cause excessive re-rendering).
