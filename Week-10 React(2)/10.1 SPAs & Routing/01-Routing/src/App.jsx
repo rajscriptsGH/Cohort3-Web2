@@ -7,9 +7,9 @@ function App() {
   return (
     <BrowserRouter>
       <Link to={'/'}>Home</Link >
-      |
+      ||
       <Link to={"/project"}>Project </Link >
-      |
+      ||
       <Link to={"/book"}>Call</Link >
       <Routes>
         <Route path="/" element={<Home />} />
