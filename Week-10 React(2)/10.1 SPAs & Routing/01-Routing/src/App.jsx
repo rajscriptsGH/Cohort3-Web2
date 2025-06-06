@@ -17,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/project" element={<Project />} />
         <Route path="/book" element={<Call />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   )
@@ -41,6 +42,19 @@ function Call() {
   }
   return <div>
     Book a Call section
+    <button onClick={backHome}>Back to Home</button>
+  </div>
+}
+
+function ErrorPage() {
+  const navigate = useNavigate()
+
+  function backHome() {
+    navigate('/')
+  }
+  return <div>
+
+    <p> Sorry, page not found</p>
     <button onClick={backHome}>Back to Home</button>
   </div>
 }
