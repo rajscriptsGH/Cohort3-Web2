@@ -3,6 +3,17 @@ import { BrowserRouter, Routes, Route, Link, useNavigate, Outlet } from "react-r
 import './App.css'
 
 function App() {
+// other way to include to routes
+  // const routes = [
+  //   {
+  //     path: "/",
+  //     element: <Home />,
+  //   },
+  //   {
+  //     path: "/project",
+  //     element: <Project />
+  //   },
+  // ]
 
   return (
     <BrowserRouter>
