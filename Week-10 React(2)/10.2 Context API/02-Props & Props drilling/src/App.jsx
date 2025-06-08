@@ -3,23 +3,23 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [bulbOn, setBulbOn] = useState(true)
 
   return (
     <div>
-      <LightBulb />
+      <Light bulbOn={bulbOn} setBulbOn={setBulbOn} />
     </div>
   )
 }
 
-function LightBulb() {
-  const [bulbOn, setBulbOn] = useState(true)
+function Light({ bulbOn, setBulbOn }) {
   return <div>
-    <BulbState bulbOn={bulbOn} />
-    <ToggleBulbState bulbOn={bulbOn} setBulbOn={setBulbOn} />
+    <LightBulb bulbOn={bulbOn} />
+    <LightSwitch bulbOn={bulbOn} setBulbOn={setBulbOn} />
   </div>
 }
 
-function BulbState({ bulbOn }) {
+function LightBulb({ bulbOn }) {
 
   return <div>
     {bulbOn ? "Bulb is on" : "Bulb is off"}
@@ -27,7 +27,7 @@ function BulbState({ bulbOn }) {
 
 }
 
-function ToggleBulbState({ bulbOn, setBulbOn }) {
+function LightSwitch({ bulbOn, setBulbOn }) {
   function toggle() {
     setBulbOn(!bulbOn)
   }
