@@ -15,7 +15,7 @@ function LightBulb() {
   const [bulbOn, setBulbOn] = useState(true)
   return <div>
     <BulbState bulbOn={bulbOn} />
-    <ToggleBulbState setBulbOn={setBulbOn} />
+    <ToggleBulbState bulbOn={bulbOn} setBulbOn={setBulbOn} />
   </div>
 }
 
@@ -27,9 +27,9 @@ function BulbState({ bulbOn }) {
 
 }
 
-function ToggleBulbState({ setBulbOn }) {
+function ToggleBulbState({ bulbOn, setBulbOn }) {
   function toggle() {
-    setBulbOn(On => !On)
+    setBulbOn(!bulbOn)
   }
 
   return <div>
