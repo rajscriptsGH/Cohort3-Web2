@@ -20,7 +20,6 @@ function Light({ bulbOn, setBulbOn }) {
 }
 
 function LightBulb({ bulbOn }) {
-
   return <div>
     {bulbOn ? "Bulb is on" : "Bulb is off"}
   </div>
