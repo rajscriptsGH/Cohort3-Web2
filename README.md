@@ -28,6 +28,8 @@ cd Cohort3
 
 ⚠️ This repo is for educational purposes only. Please do not copy-paste code blindly — understand and learn from it!
 
+```
+
 🙏 Credits
 Instructor: Harkirat Singh
 
@@ -38,4 +40,3 @@ Program: 100xDevs
 # React Notes
 
 https://petal-estimate-4e9.notion.site/React-Part-1-1177dfd1073580069172fc54e33929c0
-```
