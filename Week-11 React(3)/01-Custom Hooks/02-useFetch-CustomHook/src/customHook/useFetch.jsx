@@ -16,3 +16,19 @@ export function useFetchPostTitle() {
 
     return data.title
 }
+
+export function useFetch(url) {
+    const [data, setData] = useState({})
+
+    async function getPosts() {
+        const response = await fetch(url)
+        const json = await response.json()
+        setData(json)
+    }
+
+    useEffect(() => {
+        getPosts()
+    }, [])
+
+    return data
+}
