@@ -19,11 +19,11 @@ function ButtonComponent({ setBgColour }) {
   }
 
   return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <button onClick={() => changeBgColor("red")}>Red</button>
-    <button onClick={() => changeBgColor("blue")}>Blue</button>
-    <button onClick={() => changeBgColor("green")}>Green</button>
-    <button onClick={() => changeBgColor("orange")}>Orange</button>
-    <button onClick={() => changeBgColor("purple")}>Purple</button>
+    <button style={{ backgroundColor: 'red', border: 'none', borderRadius: 4, padding: 5 }} onClick={() => changeBgColor("red")}>Red</button>
+    <button style={{ backgroundColor: 'blue', border: 'none', borderRadius: 4, padding: 5 }} onClick={() => changeBgColor("blue")}>Blue</button>
+    <button style={{ backgroundColor: 'green', border: 'none', borderRadius: 4, padding: 5 }} onClick={() => changeBgColor("green")}>Green</button>
+    <button style={{ backgroundColor: 'orange', border: 'none', borderRadius: 4, padding: 5 }} onClick={() => changeBgColor("orange")}>Orange</button>
+    <button style={{ backgroundColor: 'purple', border: 'none', borderRadius: 4, padding: 5 }} onClick={() => changeBgColor("purple")}>Purple</button>
   </div>
 }
 
