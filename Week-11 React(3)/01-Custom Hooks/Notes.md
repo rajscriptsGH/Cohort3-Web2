@@ -55,11 +55,11 @@ return ref.current
 
 # ⚠️ Rules of Custom Hooks
 
-Must start with use
-
-Can use other hooks inside
-
-Follow Rules of Hooks
+```
+-Must start with use
+-Can use other hooks inside
+-Follow Rules of Hooks
+```
 
 # Benefits
 
