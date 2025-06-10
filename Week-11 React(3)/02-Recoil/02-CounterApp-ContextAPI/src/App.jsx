@@ -1,7 +1,20 @@
 
-import { useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import './App.css'
 
+const CounterContext = createContext()
+
+function CounterContextProvider({ children }) {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div>
+      <CounterContext.Provider value={{ count, setCount }}>
+        {children}
+      </CounterContext.Provider>
+    </div>
+  )
+}
 
 function App() {
 
@@ -12,21 +25,32 @@ function App() {
   )
 }
 function Counter() {
-  const [count, setCount] = useState(0)
 
   return <div>
-    {count}
-    <IncreaseCounter setCount={setCount} />
-    <DcreaseCounter setCount={setCount} />
+    <CounterContextProvider>
+      <CurrentCount />
+      <IncreaseCounter />
+      <DcreaseCounter />
+    </CounterContextProvider>
   </div>
 }
 
-function IncreaseCounter({ setCount }) {
+function CurrentCount() {
+  const { count } = useContext(CounterContext)
+  return <div>
+    <p>{count}</p>
+  </div>
+}
+
+function IncreaseCounter() {
+  const { setCount } = useContext(CounterContext)
   return <div>
     <button onClick={() => { setCount(count => count + 1) }}>Increase</button>
   </div>
 }
-function DcreaseCounter({ setCount }) {
+
+function DcreaseCounter() {
+  const { setCount } = useContext(CounterContext)
   return <div>
     <button onClick={() => { setCount(count => count - 1) }}>Decrease</button>
   </div>
