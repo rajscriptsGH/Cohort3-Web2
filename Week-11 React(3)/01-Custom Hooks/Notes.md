@@ -1,16 +1,24 @@
 # Custom Hook – Summary Notes
 
 🔹 What is a Custom Hook?
--A custom hook is a JavaScript function that starts with use and lets you reuse logic across multiple components.
+
+```
+A custom hook is a JavaScript function that starts with use and lets you reuse logic across multiple components.
+```
 
 🔹 Why Use Custom Hooks?
+
+```
 -Code reuse: Share logic without duplicating code.
 
 -Clean components: Move logic out of components.
 
 -Better abstraction: Separate UI from business logic.
+```
 
 🔹 Where to Use?
+
+```
 -When multiple components share common logic, like:
 
 -Form handling
@@ -22,6 +30,7 @@
 -Authentication logic
 
 -Event listeners, etc.
+```
 
 🔹 Syntax
 
