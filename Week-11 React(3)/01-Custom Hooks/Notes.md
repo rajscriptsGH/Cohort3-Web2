@@ -10,9 +10,7 @@ A custom hook is a JavaScript function that starts with use and lets you reuse l
 
 ```
 -Code reuse: Share logic without duplicating code.
-
 -Clean components: Move logic out of components.
-
 -Better abstraction: Separate UI from business logic.
 ```
 
@@ -20,15 +18,10 @@ A custom hook is a JavaScript function that starts with use and lets you reuse l
 
 ```
 -When multiple components share common logic, like:
-
 -Form handling
-
 -Fetching data
-
 -Storing previous values (usePrev)
-
 -Authentication logic
-
 -Event listeners, etc.
 ```
 
