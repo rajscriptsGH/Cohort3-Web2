@@ -29,7 +29,7 @@ npm install zustand
 
 ### 1.Create a Store
 
-```
+```js
 import { create } from 'zustand'
 
 const useStore = create((set) => ({
@@ -44,7 +44,7 @@ export default useStore
 
 ### 2.Use the Store in Components
 
-```
+```js
 import React from 'react'
 import useStore from './store'
 
