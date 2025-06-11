@@ -1,4 +1,6 @@
-# Introducing recoil
+# It is over for Recoil, Learn other state management library
+
+## Introducing recoil
 
 - A state management library for React that provides a way to manage global state with fine-grained control.
 
