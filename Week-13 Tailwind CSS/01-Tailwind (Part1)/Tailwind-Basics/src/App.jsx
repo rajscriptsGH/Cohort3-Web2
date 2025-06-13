@@ -1,9 +1,14 @@
 import React from 'react'
+import FlexTest from './components/FlexTest'
+import GridTest from './components/GridTest'
+import ResponsiveTest from './components/ResponsiveTest'
 
 function App() {
   return (
     <div>
-      <h1 className='bg-blue-400'>Tailwind Basics</h1>
+      <FlexTest />
+      {/* <GridTest /> */}
+      {/* <ResponsiveTest /> */}
     </div>
   )
 }
