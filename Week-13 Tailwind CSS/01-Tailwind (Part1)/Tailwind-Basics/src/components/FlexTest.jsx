@@ -10,7 +10,7 @@ function FlexTest() {
                 This is the second children
             </div>
             <div className='bg-blue-400'>
-                fleThis is the third childrenx1
+                This is the third children
             </div>
         </div>
     )

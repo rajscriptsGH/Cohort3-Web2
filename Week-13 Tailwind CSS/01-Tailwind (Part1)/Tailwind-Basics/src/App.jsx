@@ -6,8 +6,8 @@ import ResponsiveTest from './components/ResponsiveTest'
 function App() {
   return (
     <div>
-      <FlexTest />
-      {/* <GridTest /> */}
+      {/* <FlexTest /> */}
+      <GridTest />
       {/* <ResponsiveTest /> */}
     </div>
   )
