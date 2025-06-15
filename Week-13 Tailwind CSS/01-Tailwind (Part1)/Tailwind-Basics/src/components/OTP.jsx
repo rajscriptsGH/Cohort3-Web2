@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 
 export function OTP({ number }) {
-    const inputRefs = useRef([]);
+    const ref = useRef([]);
     const [values, setValues] = useState(Array(number).fill(""));
 
     const [disabled, setDisabled] = useState(true);
@@ -16,7 +16,7 @@ export function OTP({ number }) {
         setValues(updatedValues);
 
         if (val && index < number - 1) {
-            inputRefs.current[index + 1]?.focus();
+            ref.current[index + 1]?.focus();
         }
     };
 
@@ -26,7 +26,7 @@ export function OTP({ number }) {
         setValues(updatedValues);
 
         if (index > 0) {
-            inputRefs.current[index - 1]?.focus();
+            ref.current[index - 1]?.focus();
         }
     };
 
@@ -39,7 +39,7 @@ export function OTP({ number }) {
                         <SubOtpBox
                             key={index}
                             value={values[index]}
-                            reference={(el) => (inputRefs.current[index] = el)}
+                            reference={(el) => (ref.current[index] = el)}
                             onChange={(val) => handleChange(val, index)}
                             onBackspace={() => handleBackspace(index)}
                         />
