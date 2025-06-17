@@ -6,7 +6,6 @@ function App() {
 
   return (
     <div>
-      Tailwind Part2
       <Sidebar />
     </div>
   )
