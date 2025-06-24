@@ -1,7 +1,9 @@
 function sum(a:number, b:number){
-    console.log(a+b);
+    return a+b;
 }
 
-sum(2,3);
+let ans = sum(2,3);
+console.log(ans);
+
 
 
