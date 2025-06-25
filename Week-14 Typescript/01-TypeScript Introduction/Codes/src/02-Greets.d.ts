@@ -1,1 +1,1 @@
-declare function greet(firstName: string): void;
+declare let greet: () => void;

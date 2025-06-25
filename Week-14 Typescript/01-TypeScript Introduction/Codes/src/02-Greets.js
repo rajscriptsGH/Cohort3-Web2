@@ -1,5 +1,8 @@
 "use strict";
-function greet(firstName) {
-    console.log(`Hello ${firstName}`);
-}
-greet("Razz");
+// function greet(firstName: string){
+//     console.log(`Hello ${firstName}`);
+// }
+// greet("Razz")
+let greet = () => {
+    console.log("Hello");
+};
