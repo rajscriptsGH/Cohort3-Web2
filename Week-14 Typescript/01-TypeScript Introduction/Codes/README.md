@@ -5,9 +5,10 @@
 - Install Node.js
   -- Download - from official website
   -- Verifry
-  ````node -v
-    npm -v```
-  ````
+  ```
+  node -v
+  npm - v;
+  ```
 
 # Step 1: Set Up TypeScript
 
