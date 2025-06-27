@@ -1,11 +1,13 @@
+interface Address {                //? is used for optional property
+    city: string;
+    country: string;
+    pincode: number;
+};
+
 interface User {
     name: string;
     age: number;
-    address:{
-        city: string;
-        country: string;
-        pincode: number
-    };
+    address?: Address
 }
 
 let user: User = {
@@ -14,14 +16,15 @@ let user: User = {
     address: {
         city: "BBSR",
         country: "India",
-        pincode: 568362
+        pincode: 2834
     }
 }
 
-function isLegal(user: User): boolean{
-    if(user.age>= 18){
+
+function isLegal(user: User): boolean {
+    if (user.age >= 18) {
         return true;
-    }else{
+    } else {
         return false
     }
 }
