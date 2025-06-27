@@ -1,4 +1,4 @@
-interface Address {                //? is used for optional property
+interface Address {                
     city: string;
     country: string;
     pincode: number;
@@ -7,7 +7,7 @@ interface Address {                //? is used for optional property
 interface User {
     name: string;
     age: number;
-    address?: Address
+    address?: Address            //? is used for optional property
 }
 
 let user: User = {
