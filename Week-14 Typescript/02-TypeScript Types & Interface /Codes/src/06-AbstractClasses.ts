@@ -12,7 +12,7 @@
     //abstract method, must be implemented in subclass
     abstract study(): void;
 
-    //default methiod
+    //default/concrete methiod
     run(): void{
         console.log(`${this.name} has gone for running`);
     }
