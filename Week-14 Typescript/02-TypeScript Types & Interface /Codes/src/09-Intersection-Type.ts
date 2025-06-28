@@ -23,3 +23,9 @@ let employee1:Employee = {
     startdate: "12-08-2013"
 }
 
+/*
+Notes
+
+-intersection means combining both
+
+*/
