@@ -11,7 +11,7 @@
 
 - It can:
 
-  -Have abstract methods (no body → must be implemented by subclass)
+  - Have abstract methods (no body → must be implemented by subclass)
 
   - Have normal methods (with logic)
 
