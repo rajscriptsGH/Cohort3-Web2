@@ -8,21 +8,21 @@ interface Animal{
     bark(): void;
 }
 
-class Human implements Student, Animal{
-    name:string;
+// class Human implements Student, Animal{
+//     name:string;
 
-    constructor(name:string){
-        this.name = name;
-    }
+//     constructor(name:string){
+//         this.name = name;
+//     }
 
-    eat(): void{
-        console.log("Eating");    
-    }
+//     eat(): void{
+//         console.log("Eating");    
+//     }
 
-    bark(): void{
-        console.log("dogs barks");    
-    }
-}
+//     bark(): void{
+//         console.log("dogs barks");    
+//     }
+// }
 
-const manya = new Human("Pawn")
-console.log(manya);
+// const manya = new Human("Pawn")
+// console.log(manya);
