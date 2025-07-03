@@ -1,12 +1,12 @@
-interface User {
+interface UserPfp {
     id: number;
     name: string;
     email: string;
     password: string
 }
-type UserProfile = Pick<User, 'name' | 'email'>;
+type UserProfile = Pick<UserPfp, 'name' | 'email'>;
 
-function displayUserProfile(user: User) {
+function displayUserProfile(user: UserPfp) {
     console.log(`Name: ${user.name} Email: ${user.email}`);
 
 }
