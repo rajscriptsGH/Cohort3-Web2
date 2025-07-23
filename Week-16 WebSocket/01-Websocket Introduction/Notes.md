@@ -21,3 +21,15 @@ WebSocket:
 - Is full-duplex (both client and server can talk any time).
 
 - Is fast & efficient (less overhead than HTTP).
+
+## How WebSocket Works (Step by Step)
+
+- Client initiates a connection via HTTP handshake with a special header (Upgrade: websocket).
+
+- Server accepts and upgrades the connection.
+
+- Now the WebSocket connection is open and stays open.
+
+- Both client & server can send/receive messages anytime.
+
+- When done, either side can close the connection.
