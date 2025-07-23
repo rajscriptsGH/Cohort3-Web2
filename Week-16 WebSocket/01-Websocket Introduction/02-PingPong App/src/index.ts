@@ -9,8 +9,6 @@ wss.on('connection', (socket) => {
 
     //client 
     socket.on("message", (e) => {
-        console.log(e.toString());
-        console.log(e.toString() === "ping");
 
         if (e.toString() === 'ping')
             socket.send("pong")
