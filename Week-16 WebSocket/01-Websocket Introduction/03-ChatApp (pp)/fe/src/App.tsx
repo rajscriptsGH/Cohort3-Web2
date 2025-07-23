@@ -4,24 +4,22 @@ import './App.css'
 
 function App() {
   const [socket, setSocket] = useState();
-  const inputRef = useRef(null)
+  const inputRef = useRef(null)  //to take reference form input
 
   function sendMessage() {
     if (!socket) {
       return;
     }
 
-    const msg = inputRef.current?.value;
+    const message = inputRef.current?.value;
     //@ts-ignore
-    socket.send(msg)
-
+    socket.send(message)
+    inputRef.current.value = ""  //clear input field
   }
 
   useEffect(() => {
     const ws = new WebSocket("ws://localhost:8080")
     setSocket(ws);
-
-
 
     ws.onmessage = (ev) => {
       alert(ev.data)
