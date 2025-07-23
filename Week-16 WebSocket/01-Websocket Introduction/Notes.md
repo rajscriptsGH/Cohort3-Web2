@@ -34,13 +34,18 @@ WebSocket:
 
 - When done, either side can close the connection.
 
-## WebSocket vs HTTP
+## HTTP vs WebSocket
 
-Feature HTTP WebSocket
-Connection New for every request Persistent
-Direction Client → Server only Both ways
-Real-time use Not suitable Perfect
-Efficiency Less efficient More efficient
+| Feature         | HTTP                      | WebSocket               |
+|-----------------|---------------------------|-------------------------|
+| Connection      | New for every request     | Persistent              |
+| Direction       | Client → Server only      | Both ways (Full-duplex) |
+| Real-time use   | Not suitable              | Perfect for real-time   |
+| Efficiency      | Less efficient            | More efficient          |
+| Protocol        | Request/Response          | Event-driven            |
+| Use Cases       | REST APIs, websites       | Chat apps, games, live data |
+
+
 
 ## Can you store a WebSocket object (socket) directly in a database?
 
