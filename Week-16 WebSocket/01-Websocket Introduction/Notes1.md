@@ -37,7 +37,7 @@ socket.send("ping");
 socket.onmessage = (e) => console.log(e.data);
 ```
 
-Use for:
+✅ Use for:
 
 - Chat apps
 
@@ -53,7 +53,7 @@ Use for:
 
 - Binary data → very fast
 
-Use for:
+✅ Use for:
 
 - Microservices communication
 
@@ -78,7 +78,7 @@ query {
 }
 ```
 
-Use for:
+✅ Use for:
 
 - Flexible data fetching
 
@@ -92,7 +92,7 @@ Use for:
 
 - Helps with scaling, retries, background jobs
 
-Use for:
+✅ Use for:
 
 - Event-driven architecture
 
@@ -106,7 +106,7 @@ Use for:
 
 - Over HTTP, simpler than WebSocket
 
-Use for:
+✅ Use for:
 
 - Notifications
 
