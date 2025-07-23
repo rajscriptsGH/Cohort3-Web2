@@ -22,6 +22,15 @@ WebSocket:
 
 - Is fast & efficient (less overhead than HTTP).
 
+## Use Cases for WebSockets
+
+- Real-Time Applications:
+ Chat applications, live sports updates, real-time gaming, and any application requiring instant updates can benefit from WebSockets.
+- Live Feeds:
+ Financial tickers, news feeds, and social media updates are examples where WebSockets can be used to push live data to users.
+- Interactive Services:
+Collaborative editing tools, live customer support chat, and interactive webinars can use WebSockets to enhance user interactio
+
 ## How WebSocket Works (Step by Step)
 
 - Client initiates a connection via HTTP handshake with a special header (Upgrade: websocket).
@@ -44,8 +53,6 @@ WebSocket:
 | Efficiency      | Less efficient            | More efficient          |
 | Protocol        | Request/Response          | Event-driven            |
 | Use Cases       | REST APIs, websites       | Chat apps, games, live data |
-
-
 
 ## Can you store a WebSocket object (socket) directly in a database?
 
