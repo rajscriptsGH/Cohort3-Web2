@@ -33,3 +33,27 @@ WebSocket:
 - Both client & server can send/receive messages anytime.
 
 - When done, either side can close the connection.
+
+## WebSocket vs HTTP
+
+Feature HTTP WebSocket
+Connection New for every request Persistent
+Direction Client → Server only Both ways
+Real-time use Not suitable Perfect
+Efficiency Less efficient More efficient
+
+## Can you store a WebSocket object (socket) directly in a database?
+
+No, you can't (and shouldn't) store a live WebSocket object in a database.
+
+### Why not?
+
+A WebSocket object is:
+
+- An in-memory, live connection between a client and a server.
+
+- Tied to a particular request and IP address.
+
+- Not serializable (you can't JSON.stringify() it).
+
+- Useless when stored, because you can't restore a socket from disk and make it "work" again — it dies when the server restarts or disconnects.
