@@ -53,7 +53,7 @@ wss.on("connection", (socket) => {
                     //Send the chat messages
                     user.socket.send(JSON.stringify({
                         type: 'chat',
-                        msg
+                        msg: text
                     }
                     ))
                 }

@@ -7,11 +7,19 @@ function App() {
   const inputRef = useRef(null);
 
   useEffect(() => {
-    const ws = new WebSocket("http://localhost:8080");
-    ws.onmessage = (event) => {
-      setMessages((m) => [...m, event.data]);
-    };
-    
+    const ws = new WebSocket("ws://localhost:8080");
+    ws.onmessage = (event => {
+      try {
+        const data = JSON.parse(event.data)
+        //@ts-ignore
+        if (data.type === 'chat' && data.msg) {
+          setMessages((m) => [...m, data.msg]);
+        }
+      } catch (error) {
+        console.log("Invalid JSON", error);
+      }
+    })
+
     //@ts-ignore
     wsRef.current = ws;
 
@@ -38,9 +46,15 @@ function App() {
       </h1>
 
       <div className="h-[80vh] w-full bg-slate-700 rounded-xl p-5 mb-2">
-        {messages.map((message) => (
-          <div className="my-5">
-            <span className="bg-white px-3 py-2 rounded-lg">{message}</span>
+        {messages.map((message, idx) => (
+          <div key={idx} className="my-5">
+            <span className="bg-white px-3 py-2 rounded-lg">
+
+              {typeof message === "string" ?
+                message
+                : message?.payload?.text || "Unsupported message"}
+
+            </span>
           </div>
         ))}
       </div>
@@ -62,7 +76,7 @@ function App() {
               JSON.stringify({
                 type: "chat",
                 payload: {
-                  message: message,
+                  text: message,
                 },
               })
             );
