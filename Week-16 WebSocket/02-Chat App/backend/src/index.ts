@@ -16,6 +16,8 @@ wss.on("connection", (socket) => {
 
     socket.on('message', (message) => {
         const msg = JSON.parse(message.toString())
+        console.log(`Recieved msg: ${JSON.stringify(msg)}`);
+
 
         // User wants to join a room
         if (msg.type === 'join') {
@@ -46,16 +48,14 @@ wss.on("connection", (socket) => {
             //Broadcast to all user in that room
             allSockets.forEach((user) => {
                 //Check for same room and sender themselves
-                if (user.room == room && user.socket !== socket) {
+                if (user.room == room) {
 
                     //Send the chat messages
                     user.socket.send(JSON.stringify({
                         type: 'chat',
-                        payload: {
-                            text,
-                            room
-                        }
-                    }))
+                        msg
+                    }
+                    ))
                 }
             })
         }
