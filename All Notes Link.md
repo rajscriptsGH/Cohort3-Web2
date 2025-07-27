@@ -2,9 +2,16 @@
 
 ## Week1
 
+<https://projects.100xdevs.com/tracks/web-orientation/Web-Dev---Devops-Orientation-1>
+
+<https://petal-estimate-4e9.notion.site/Orientation-703d935ef4564fe1bc61e60e83f4c409>
+
 ## Week2
 
 ## Week3
+
+<https://projects.100xdevs.com/tracks/dom-2/DOM-Part-2--1>
+<https://projects.100xdevs.com/tracks/dom-2/DOM-Part-2--1>
 
 ## Week4
 
