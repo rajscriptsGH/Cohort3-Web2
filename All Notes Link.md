@@ -36,7 +36,8 @@
 
 ## Week18
 
-## Week 19
+## Week19
 
-[Next 1](https://projects.100xdevs.com/tracks/nextjs-1/next-1)  
-[Next 2](https://projects.100xdevs.com/tracks/nextjs-2/next-2-1)
+<https://projects.100xdevs.com/tracks/nextjs-1/next-1>
+
+<https://projects.100xdevs.com/tracks/nextjs-2/next-2-1>
