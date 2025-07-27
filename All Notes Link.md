@@ -2,24 +2,26 @@
 
 ## Week1
 
-- Orientation
+- Orientation:
 <https://projects.100xdevs.com/tracks/web-orientation/Web-Dev---Devops-Orientation-1>
 
-- HTML & CSS
+- HTML & CSS:
 <https://petal-estimate-4e9.notion.site/Orientation-703d935ef4564fe1bc61e60e83f4c409>
 
 ## Week2
 
--Async JS
+- Async JS:
 <https://projects.100xdevs.com/tracks/async-js-1/Asynchronous-Javascript--Callbacks-and-more-1>
 
-- Offline
+- Offline:
 <https://projects.100xdevs.com/tracks/installing-node-assignments/-1>
 
 ## Week3
 
+- DOM Part1:
 <https://projects.100xdevs.com/tracks/dom-1/Basics-of-DOM-1>
 
+- DOM Part2:
 <https://projects.100xdevs.com/tracks/dom-2/DOM-Part-2--1>
 
 ## Week4
