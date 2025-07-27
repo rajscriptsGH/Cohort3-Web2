@@ -64,7 +64,7 @@ The "waterfalling problem" refers to when several network requests are made sequ
 
 - Client fetches script.js for hydration.
 
-#### Result
+#### Results
 
 Less roundtrip
 
@@ -120,7 +120,7 @@ In Next.js, a layout is a React component that wraps around pages and is used to
 
 - Layouts must be server components by default.
 
-- Use className in <body> or <html> to set global Tailwind classes.
+- Use className in `<body>` or `<html>` to set global Tailwind classes.
 
 - Place Navbar or Sidebar inside layout.tsx, not in each page.tsx.
 
