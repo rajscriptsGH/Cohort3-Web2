@@ -14,6 +14,10 @@
 
 <https://projects.100xdevs.com/tracks/async-js-1/Asynchronous-Javascript--Callbacks-and-more-1>
 
+### Offline Notes
+
+<https://projects.100xdevs.com/tracks/installing-node-assignments/-1>
+
 ## Week3
 
 <https://projects.100xdevs.com/tracks/dom-2/DOM-Part-2--1>
