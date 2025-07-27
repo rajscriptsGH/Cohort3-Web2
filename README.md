@@ -25,10 +25,9 @@ Clone the repository:
 ```bash
 git clone https://github.com/rajscriptsGH/Cohort3
 cd Cohort3
-
-⚠️ This repo is for educational purposes only. Please do not copy-paste code blindly — understand and learn from it!
-
 ```
+- ⚠️ This repo is for educational purposes only. Please do not copy-paste code blindly — understand and learn from it!
+
 
 ```md
 🙏 Credits
