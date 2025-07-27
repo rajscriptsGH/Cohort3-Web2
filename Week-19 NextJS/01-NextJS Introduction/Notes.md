@@ -74,8 +74,6 @@ Less roundtrip
 
 - No waterfalling because data was fetched server-side before rendering.
 
-
-
 ## Step 4 - Next.js offerings
 
 Next.js provides you the following upsides over React
@@ -90,3 +88,48 @@ Next.js provides you the following upsides over React
 
 - Can’t be distributed via a CDN, always needs a server running that does server side rendering and hence is expensive
 - Very opinionated, very hard to move out of it
+
+## What is a Layout?
+
+In Next.js, a layout is a React component that wraps around pages and is used to share common UI like headers, footers, navbars, sidebars, etc., across multiple pages.
+
+### Benefits of Layout
+
+- Avoids repetition (DRY principle)
+
+- Easy to maintain consistent structure
+
+- Enables nested layouts (great for dashboards, auth areas, etc.)
+
+### Layout File Structure (Next.js App Router)
+
+```bash
+/app
+  └── layout.tsx     # Root layout
+  └── page.tsx       # Root page
+  └── about/
+      └── layout.tsx # Nested layout
+      └── page.tsx   # Nested page
+```
+
+- layout.tsx applies to all child routes.
+
+- Every layout.tsx must include {children} inside.
+
+## Tips
+
+- Layouts must be server components by default.
+
+- Use className in <body> or <html> to set global Tailwind classes.
+
+- Place Navbar or Sidebar inside layout.tsx, not in each page.tsx.
+
+- Layouts do not reset on client-side route change, improving performance.
+
+## Common Mistakes
+
+- Forgetting to add {children} in layout.
+
+- Using useState or useEffect directly in layout (requires making it a client component).
+
+- Not wrapping the app with global context providers (like ThemeProvider) in layout.
