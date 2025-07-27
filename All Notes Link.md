@@ -26,6 +26,12 @@
 
 ## Week4
 
+- Node JS:
+<https://projects.100xdevs.com/tracks/js-runtim/Node-js-Runtime-1>
+
+- HTTP Servers:
+<https://projects.100xdevs.com/tracks/http-intro/Intro-to-HTTP-1>
+
 ## Week5
 
 ## Week6
