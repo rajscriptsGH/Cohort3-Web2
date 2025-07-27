@@ -8,6 +8,10 @@
 
 ## Week2
 
+### Async JS
+
+<https://projects.100xdevs.com/tracks/async-js-1/Asynchronous-Javascript--Callbacks-and-more-1>
+
 ## Week3
 
 <https://projects.100xdevs.com/tracks/dom-2/DOM-Part-2--1>
