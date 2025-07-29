@@ -1,4 +1,4 @@
-import { log } from "console";
+'use client'
 import { NextRequest, NextResponse } from "next/server";
 
 
