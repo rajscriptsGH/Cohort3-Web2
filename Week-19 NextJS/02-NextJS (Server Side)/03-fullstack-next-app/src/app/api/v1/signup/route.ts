@@ -1,21 +1,20 @@
-'use client'
+import { PrismaClient } from "@/generated/prisma";
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client/extension";
+
+const prisma = new PrismaClient(); // ✅ correct
 
 export async function POST(req: NextRequest) {
-
-    const data = await req.json()
+    const data = await req.json();
     console.log(data);
 
-    await PrismaClient.user.create({
+    await prisma.user.create({
         data: {
             username: data.username,
-            password: data.password
-        }
-    })
-
+            password: data.password,
+        },
+    });
 
     return NextResponse.json({
-        msg: "u are signed up"
-    })
+        msg: "You are signed up",
+    });
 }

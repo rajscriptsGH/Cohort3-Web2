@@ -11,9 +11,9 @@ export default function Signup() {
     const router = useRouter();
 
     return (
-        <div className="w-screen h-screen flex justify-center items-center bg-gray-100">
-            <div className="bg-white shadow-md rounded-lg p-6 w-80">
-                <h1 className="text-2xl font-semibold text-center mb-4">Sign Up</h1>
+        <div className="w-screen h-screen flex justify-center items-center bg-gray-600">
+            <div className="bg-slate-900 shadow-md rounded-lg p-6 w-80">
+                <h1 className="text-2xl font-semibold text-center mb-4 text-white">Sign Up</h1>
                 <div className="flex flex-col gap-4">
                     <input
                         type="text"
