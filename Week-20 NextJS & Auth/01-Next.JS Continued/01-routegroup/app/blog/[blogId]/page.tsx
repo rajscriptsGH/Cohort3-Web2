@@ -1,8 +1,17 @@
+import axios from "axios";
 
 
-export default function ({ params }: { params: { blogId?: string } }) {
+export default async function ({ params }: { params: { blogId?: string } }) {
     const postId = params.blogId;
+    const response = await axios.get(`https://jsonplaceholder.typicode.com/todos/${postId}`)
+
+    const data = response.data
+
+
     return <div>
         Blog Post {postId}
+        <br />
+        id: {data.id} <br />
+        title: {data.title} <br />
     </div>
 }
