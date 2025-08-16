@@ -1,4 +1,5 @@
-"use client"
+// "use client"
+import { getServerSession } from "next-auth";
 
 // import { SessionProvider, signIn, signOut, useSession } from "next-auth/react";
 
@@ -26,10 +27,11 @@
 //   )
 // }
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession()
   return (
     <div>
-      Hii main
+      {JSON.stringify(session)}
     </div>
   );
 }

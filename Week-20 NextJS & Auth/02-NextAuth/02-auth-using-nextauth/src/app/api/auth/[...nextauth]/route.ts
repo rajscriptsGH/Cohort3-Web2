@@ -12,9 +12,14 @@ const handler = NextAuth({
                 password: { label: "Password", type: "password" }
             },
             async authorize(credentials, req) {
+                const username = credentials?.username;
+                const password = credentials?.password;
+
+                console.log(username, password);
+
                 const user = {
                     id: "1",
-                    name: "RK Razz",
+                    username: "rajscripts",
                     email: "razz@example.com"
                 }
 
@@ -23,8 +28,10 @@ const handler = NextAuth({
                 } else {
                     return null
                 }
-            }
+            },
         }),
+
+
         GoogleProvider({
             clientId: "abc",
             clientSecret: "abc"
@@ -33,7 +40,13 @@ const handler = NextAuth({
             clientId: "abc",
             clientSecret: "abc"
         })
-    ]
+    ],
+
+    session: {
+        strategy: "jwt",
+    },
+
+    secret: process.env.NEXTAUTH_SECRET
 })
 
 export { handler as GET, handler as POST }
