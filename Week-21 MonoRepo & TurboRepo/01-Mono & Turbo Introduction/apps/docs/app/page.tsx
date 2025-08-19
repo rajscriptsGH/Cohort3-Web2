@@ -52,7 +52,7 @@ export default function Home() {
               width={20}
               height={20}
             />
-            Deploy now
+            Deploy right now
           </a>
           <a
             href="https://turborepo.com/docs?utm_source"
