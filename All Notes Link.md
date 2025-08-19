@@ -50,6 +50,8 @@
 
 ## Week8
 
+- Course Selling App
+
 ## Week9
 
 ## Week10
