@@ -46,6 +46,8 @@
 
 ## Week7
 
+<https://projects.100xdevs.com/tracks/mongodb/MongoDB--Zod--Error-handling-and-Input-validation-1>
+
 ## Week8
 
 ## Week9
